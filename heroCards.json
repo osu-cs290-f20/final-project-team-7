@@ -1,0 +1,503 @@
+[
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Ant Man",
+                "subtitle": "Ant Man",
+                "attack": 3,
+                "tech": 2,
+                "image": "/hCardPNGS/HCard_AM_Ant_Man.png"
+            },
+            {
+                "name": "Ant Man",
+                "subtitle": "Giant-Man",
+                "attack": 3,
+                "brawn": 3,
+                "tech": 2,
+                "image": "/hCardPNGS/HCard_AM_Giant_Man.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Bruce Banner",
+                "subtitle": "Calm",
+                "attack": 1,
+                "tech": 1,
+                "image": "/hCardPNGS/HCard_BB_Calm.png"
+            },
+            {
+                "name": "The Hulk",
+                "subtitle": "Enraged",
+                "attack": 6,
+                "brawn": 3,
+                "image": "/hCardPNGS/HCard_BB_Enraged.png"
+            },
+            {
+                "name": "Professor Hulk",
+                "subtitle": "Together",
+                "attack": 6,
+                "brawn": 3,
+                "tech": 1,
+                "image": "/hCardPNGS/HCard_BB_Together.png"
+            }
+        ]
+    },
+    {
+        "cost": 0,
+        "levels": [
+            {
+                "name": "Bucky Barnes",
+                "subtitle": "The White Wolf",
+                "attack": 4,
+                "brawn": 2,
+                "image": "/hCardPNGS/HCard_BB_White_Wolf.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels" : [
+            {
+                "name": "Black Panther",
+                "subtitle": "Civil War",
+                "attack": 3,
+                "brawn": 2,
+                "tech": 2,
+                "image": "/hCardPNGS/HCard_BP_Civil_War.png"
+            },
+            {
+                "name": "Black Panther",
+                "subtitle": "Advanced Suit",
+                "attack": 4,
+                "brawn": 2,
+                "tech": 3,
+                "image": "/hCardPNGS/HCard_BP_Advanced_Suit.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Black Widow",
+                "subtitle": "Avengers",
+                "attack": 2,
+                "brawn": 1,
+                "image": "/hCardPNGS/HCard_BW_Avengers.png"
+            },
+            {
+                "name": "Black Widow",
+                "subtitle": "Infinity War",
+                "attack": 2,
+                "brawn": 1,
+                "tech": 2,
+                "image": "/hCardPNGS/HCard_BW_Infinity_War.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Captain America",
+                "subtitle": "Classic",
+                "attack": 2,
+                "brawn": 2,
+                "image": "/hCardPNGS/HCard_CA_Classic.png"
+            },
+            {
+                "name": "Captain America",
+                "subtitle": "Modern",
+                "attack": 3,
+                "brawn": 2,
+                "image": "/hCardPNGS/HCard_CA_Modern.png"
+            },
+            { 
+                "name": "Captain America",
+                "subtitle": "Worthy",
+                "attack": 5,
+                "brawn": 2,
+                "power": 2,
+                "image": "/hCardPNGS/HCard_CA_Worthy.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Captain Marvel",
+                "attack": 5,
+                "brawn": 1,
+                "power": 3,
+                "image": "/hCardPNGS/HCard_CM.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Drax",
+                "attack": 3,
+                "brawn": 2,
+                "image": "/hCardPNGS/HCard_D.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Doctor Strange",
+                "attack": 6,
+                "power": 3,
+                "image": "/hCardPNGS/HCard_DS.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Falcon",
+                "attack": 2,
+                "brawn": 1,
+                "tech": 1,
+                "image": "/hCardPNGS/HCard_F.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Gamora",
+                "attack": 3,
+                "brawn": 2,
+                "image": "/hCardPNGS/HCard_G.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Groot",
+                "subtitle": "Baby",
+                "attack": 1,
+                "power": 1,
+                "image": "/hCardPNGS/HCard_G_Baby.png"
+            },
+            {
+                "name": "Groot",
+                "subtitle": "Teen",
+                "attack": 2,
+                "power": 2,
+                "image": "/hCardPNGS/HCard_G_Teen.png"
+            },
+            {
+                "name": "Groot",
+                "subtitle": "Adult",
+                "attack": 4,
+                "power": 2,
+                "image": "/hCardPNGS/HCard_G_Adult.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Heimdall",
+                "attack": 4,
+                "brawn": 3,
+                "power": 1,
+                "image": "/hCardPNGS/HCard_H.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Hawkeye",
+                "subtitle": "Agent Barton",
+                "attack": 2,
+                "tech": 1,
+                "image": "/hCardPNGS/HCard_HE_Agent_Barton.png"
+            },
+            {
+                "name": "Hawkeye",
+                "subtitle": "Ronin",
+                "attack": 2,
+                "brawn": 1,
+                "tech": 2,
+                "image": "/hCardPNGS/HCard_HE_Ronin.png"
+            }
+        ]
+    },
+    {
+        "cost": 1, 
+        "levels" : [
+            {
+                "name": "Iron Man", 
+                "subtitle" : "Mark I", 
+                "attack" : 2, 
+                "tech": 1, 
+                "image": "/hCardPNGS/HCard_IM_Mark_I.png"
+            }, 
+            {
+                "name": "Iron Man", 
+                "subtitle": "Mark III", 
+                "attack": 3, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_IM_Mark_III.png"
+            }, 
+            {
+                "name": "Iron Man", 
+                "subtitle": "Mark XLII", 
+                "attack": 4, 
+                "tech": 3, 
+                "image": "/hCardPNGS/HCard_IM_Mark_XLII.png"
+            }, 
+            {
+                "name": "Iron Man", 
+                "subtitle": "Mark L", 
+                "attack": 5, 
+                "tech": 4, 
+                "image": "/hCardPNGS/HCard_IM_Mark_L.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 2, 
+        "levels": [
+            {
+                "name": "Korg", 
+                "attack": 2, 
+                "brawn": 2, 
+                "image": "/hCardPNGS/HCard_K.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 1, 
+        "levels": [
+            {
+                "name": "Mantis", 
+                "attack": 1, 
+                "power": 3, 
+                "image": "/hCardPNGS/HCard_M.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 1, 
+        "levels": [
+            {
+                "name": "Okoye", 
+                "attack": 2, 
+                "brawn": 1, 
+                "tech": 1, 
+                "image": "/hCardPNGS/HCard_O.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 1, 
+        "levels": [
+            {
+                "name": "Peggy Carter", 
+                "attack": 2, 
+                "brawn": 1, 
+                "image": "/hCardPNGS/HCard_PC.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 1, 
+        "levels": [
+            {
+                "name": "Pepper Potts", 
+                "subtitle": "Normal", 
+                "attack": 1, 
+                "tech": 1, 
+                "image": "/hCardPNGS/HCard_PP_Normal.png"
+            }, 
+            {
+                "name": "Pepper Potts", 
+                "subtitle": "Evolved", 
+                "attack": 3, 
+                "power": 2, 
+                "tech": 1, 
+                "image": "/hCardPNGS/HCard_PP_Evolved.png"
+            }, 
+            {
+                "name": "Pepper Potts", 
+                "subtitle": "Rescue", 
+                "attack": 4, 
+                "tech": 3, 
+                "image": "/hCardPNGS/HCard_PP_Rescue.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 2, 
+        "levels": [
+            {
+                "name": "Rocket Raccoon", 
+                "attack": 3, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_RR.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 2, 
+        "levels": [
+            {
+                "name": "Star-Lord", 
+                "attack": 3, 
+                "tech": 1, 
+                "image": "/hCardPNGS/HCard_SL.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 1, 
+        "levels": [
+            {
+                "name": "Spider-Man", 
+                "subtitle": "Homemade",
+                "attack": 2, 
+                "tech": 1, 
+                "image": "/hCardPNGS/HCard_SM_Homemade.png"
+            }, 
+            {
+                "name": "Spider-Man", 
+                "subtitle": "Stark Suit", 
+                "attack": 3, 
+                "brawn": 2, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_SM_Stark_Suit.png"
+            }, 
+            {
+                "name": "Spider-Man", 
+                "subtitle": "Iron Spider", 
+                "attack": 4, 
+                "brawn": 2, 
+                "tech": 3, 
+                "image": "/hCardPNGS/HCard_SM_Iron_Spider.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 0, 
+        "levels": [
+            {
+                "name": "Scarlet Witch", 
+                "subtitle": "Honed", 
+                "attack": 6, 
+                "power": 3, 
+                "image": "/hCardPNGS/HCard_SW_Honed.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 2, 
+        "levels": [
+            {
+                "name": "Thor", 
+                "subtitle": "Son of Odin", 
+                "attack": 4, 
+                "brawn": 3, 
+                "power": 1, 
+                "image": "/hCardPNGS/HCard_T_Son_Of_Odin.png"
+            }, 
+            {
+                "name": "Thor", 
+                "subtitle": "Awakened", 
+                "attack": 5, 
+                "brawn": 3, 
+                "power": 2, 
+                "image": "/hCardPNGS/HCard_T_Awakened.png"
+            }, 
+            {
+                "name": "Thor", 
+                "subtitle": "Stormbreaker", 
+                "attack": 6, 
+                "brawn": 3, 
+                "power": 3, 
+                "image": "/hCardPNGS/HCard_T_Stormbreaker.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 2, 
+        "levels": [
+            {
+                "name": "Vision", 
+                "subtitle": "The Mind Stone", 
+                "attack": 5, 
+                "power": 2, 
+                "brawn": 2, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_V.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 2, 
+        "levels": [
+            {
+                "name": "Valkyrie", 
+                "attack": 4, 
+                "brawn": 3, 
+                "image": "/hCardPNGS/HCard_Val.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 2, 
+        "levels": [
+            {
+                "name": "Wasp", 
+                "attack": 3, 
+                "brawn": 1, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_W.png"
+            }
+        ]
+    }, 
+    {
+        "cost": 1, 
+        "levels": [
+            {
+                "name": "War Machine", 
+                "subtitle": "Mark I", 
+                "attack": 2, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_WM_Mark_I.png"
+            }, 
+            {
+                "name": "War Machine", 
+                "subtitle": "Iron Patriot", 
+                "attack": 3, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_WM_Iron_Patriot.png"
+            }, 
+            {
+                "name": "War Machine", 
+                "subtitle": "Mark III", 
+                "attack": 4, 
+                "tech": 2, 
+                "image": "/hCardPNGS/HCard_WM_Mark_III.png"
+            }
+        ]
+    }
+]
