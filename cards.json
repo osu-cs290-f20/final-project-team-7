@@ -1,0 +1,247 @@
+[
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Ant Man",
+                "subtitle": "Ant Man",
+                "attack": 3,
+                "tech": 2,
+                "image": "AM_Ant_Man.png"
+            },
+            {
+                "name": "Ant Man",
+                "subtitle": "Giant-Man",
+                "attack": 3,
+                "brawn": 3,
+                "tech": 2,
+                "image": "HCard_AM_Giant_Man.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Bruce Banner",
+                "subtitle": "Calm",
+                "attack": 1,
+                "tech": 1,
+                "image": "BB_Calm.png"
+            },
+            {
+                "name": "The Hulk",
+                "subtitle": "Enraged",
+                "attack": 6,
+                "brawn": 3,
+                "image": "BB_Enraged.png"
+            },
+            {
+                "name": "Professor Hulk",
+                "subtitle": "Together",
+                "attack": 6,
+                "brawn": 3,
+                "tech": 1,
+                "image": "BB_Together.png"
+            }
+        ]
+    },
+    {
+        "cost": 0,
+        "levels": [
+            {
+                "name": "Bucky Barnes",
+                "subtitle": "The White Wolf",
+                "attack": 4,
+                "brawn": 2,
+                "image": "BB_White_Wolf.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels" : [
+            {
+                "name": "Black Panther",
+                "subtitle": "Civil War",
+                "attack": 3,
+                "brawn": 2,
+                "tech": 2,
+                "image": "BP_Civil_War.png"
+            },
+            {
+                "name": "Black Panther",
+                "subtitle": "Advanced Suit",
+                "attack": 4,
+                "brawn": 2,
+                "tech": 3,
+                "image": "BP_Advanced_Suit.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Black Widow",
+                "subtitle": "Avengers",
+                "attack": 2,
+                "brawn": 1,
+                "image": "BW_Avengers.png"
+            },
+            {
+                "name": "Black Widow",
+                "subtitle": "Infinity War",
+                "attack": 2,
+                "brawn": 1,
+                "tech": 2,
+                "image": "BW_Infinity_War.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Captain America",
+                "subtitle": "Classic",
+                "attack": 2,
+                "brawn": 2,
+                "image": "CA_Classic.png"
+            },
+            {
+                "name": "Captain America",
+                "subtitle": "Modern",
+                "attack": 3,
+                "brawn": 2,
+                "image": "CA_Modern.png"
+            },
+            { 
+                "name": "Captain America",
+                "subtitle": "Worthy",
+                "attack": 5,
+                "brawn": 2,
+                "power": 2,
+                "image": "CA_Worthy.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Captain Marvel",
+                "attack": 5,
+                "brawn": 1,
+                "power": 3,
+                "image": "CM.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Drax",
+                "attack": 3,
+                "brawn": 2,
+                "image": "D.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Doctor Strange",
+                "attack": 6,
+                "power": 3,
+                "image": "DS.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Falcon",
+                "attack": 2,
+                "brawn": 1,
+                "tech": 1,
+                "image": "F.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Gamora",
+                "attack": 3,
+                "brawn": 2,
+                "image": "G.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Groot",
+                "subtitle": "Baby",
+                "attack": 1,
+                "power": 1,
+                "image": "G_Baby.png"
+            },
+            {
+                "name": "Groot",
+                "subtitle": "Teen",
+                "attack": 2,
+                "power": 2,
+                "image": "G_Teen.png"
+            },
+            {
+                "name": "Groot",
+                "subtitle": "Adult",
+                "attack": 4,
+                "power": 2,
+                "image": "G_Adult.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Heimdall",
+                "attack": 4,
+                "brawn": 3,
+                "power": 1,
+                "image": "H.png"
+            }
+        ]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Hawkeye",
+                "subtitle": "Agent Barton",
+                "attack": 2,
+                "tech": 1,
+                "image": "HE_Agent_Barton.png"
+            },
+            {
+                "name": "Hawkeye",
+                "subtitle": "Ronin",
+                "attack": 2,
+                "brawn": 1,
+                "tech": 2,
+                "image": "HE_Ronin.png"
+            }
+        ]
+    },
+    {
+        "cost": 
+    }
+]
