@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo Hello, world"
+    "test": "echo Hello, world", 
+    "build": "handlebars views/partials/heroCard.handlebars -f public/heroCard.js", 
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/osu-cs290-f20/final-project-team-7#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6"
   }
 }

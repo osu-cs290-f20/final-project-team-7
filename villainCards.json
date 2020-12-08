@@ -1,409 +1,268 @@
 [
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Abomination",
-                "attack": 6,
-                "brawn": 3,
-                "image": "/vCardPNGS/VCard_A.png"
-            }
-	    ]
+        "name": "Abomination",
+        "attack": 6,
+        "brawn": 3,
+        "image": "/vCardPNGS/VCard_A.png"
+	    
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Aldrich Killian",
-                "attack": 4,
-                "power": 2,
-                "image": "/vCardPNGS/VCard_AK.png"
-            }
-	    ]
+        "name": "Aldrich Killian",
+        "attack": 4,
+        "power": 2,
+        "image": "/vCardPNGS/VCard_AK.png"
+	    
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Bucky Barnes",
-                "attack": 3,
-                "brawn": 2,
-                "image": "/vCardPNGS/VCard_BB_Winter_Soldier.png"
-            }
-	    ]
+        "name": "Bucky Barnes",
+        "attack": 3,
+        "brawn": 2,
+        "image": "/vCardPNGS/VCard_BB_Winter_Soldier.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Crossbones",
-                "attack": 3,
-                "brawn": 2,
-                "image": "/vCardPNGS/VCard_CB.png"
-            }
-	    ]
+        "name": "Crossbones",
+        "attack": 3,
+        "brawn": 2,
+        "image": "/vCardPNGS/VCard_CB.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Corvus Glaive",
-                "attack": 3,
-                "brawn": 1,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_CG.png"
-            }
-	    ]
+        "name": "Corvus Glaive",
+        "attack": 3,
+        "brawn": 1,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_CG.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Cull Obsidian",
-                "attack": 4,
-                "brawn": 2,
-                "tech": 1,
-                "image": "/vCardPNGS/VCard_CO.png"
-            }
-	    ]
+        "name": "Cull Obsidian",
+        "attack": 4,
+        "brawn": 2,
+        "tech": 1,
+        "image": "/vCardPNGS/VCard_CO.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Ego",
-                "attack": 6,
-                "power": 3,
-                "image": "/vCardPNGS/VCard_E.png"
-            }
-	    ]
+        "name": "Ego",
+        "attack": 6,
+        "power": 3,
+        "image": "/vCardPNGS/VCard_E.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Erik Killmonger",
-                "attack": 4,
-                "brawn": 2,
-                "tech": 3,
-                "image": "/vCardPNGS/VCard_EK.png"
-            }
-	    ]
+        "name": "Erik Killmonger",
+        "attack": 4,
+        "brawn": 2,
+        "tech": 3,
+        "image": "/vCardPNGS/VCard_EK.png"
     },
     {    
         "cost": 2,
-        "levels": [
-            {
-                "name":"Ebony Maw",
-                "attack": 6,
-                "power": 3,
-                "image": "/vCardPNGS/VCard_EM.png"
-            }
-	    ]
+        "name":"Ebony Maw",
+        "attack": 6,
+        "power": 3,
+        "image": "/vCardPNGS/VCard_EM.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Ghost",
-                "attack": 2,
-                "Power": 3,
-                "image": "/vCardPNGS/VCard_G.png"
-            }
-	    ]
+        "name": "Ghost",
+        "attack": 2,
+        "Power": 3,
+        "image": "/vCardPNGS/VCard_G.png" 
     },
     {
         "cost": 3,
-        "levels": [
-            {
-                "name": "Hela",
-                "attack": 8,
-                "power": 3,
-                "image": "/vCardPNGS/VCard_H.png"
-            }
-	    ]
+        "name": "Hela",
+        "attack": 8,
+        "power": 3,
+        "image": "/vCardPNGS/VCard_H.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Iron Monger",
-                "attack": 3,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_A.png"
-            }
-	    ]
+        "name": "Iron Monger",
+        "attack": 3,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_A.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Kaecilius",
-                "attack": 5,
-                "tech": 3,
-                "image": "/vCardPNGS/VCard_K.png"
-            }
-	    ]
+        "name": "Kaecilius",
+        "attack": 5,
+        "tech": 3,
+        "image": "/vCardPNGS/VCard_K.png" 
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "King Laufey",
-                "attack": 3,
-                "brawn": 2,
-                "power": 3,
-                "image": "/vCardPNGS/VCard_KL.png"
-            }
-	    ]
+        "name": "King Laufey",
+        "attack": 3,
+        "brawn": 2,
+        "power": 3,
+        "image": "/vCardPNGS/VCard_KL.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Loki",
-                "attack": 4,
-                "brawn": 2,
-                "power": 3,
-                "image": "/vCardPNGS/VCard_L.png"
-            }
-	    ]
+        "name": "Loki",
+        "attack": 4,
+        "brawn": 2,
+        "power": 3,
+        "image": "/vCardPNGS/VCard_L.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Malekith",
-                "attack": 3,
-                "brawn": 2,
-                "power": 1,
-                "image": "/vCardPNGS/VCard_M.png"
-            }
-	    ]
+        "name": "Malekith",
+        "attack": 3,
+        "brawn": 2,
+        "power": 1,
+        "image": "/vCardPNGS/VCard_M.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Man-Ape",
-                "attack": 2,
-                "brawn": 1,
-                "image": "/vCardPNGS/VCard_MA.png"
-            }
-	    ]
+        "name": "Man-Ape",
+        "attack": 2,
+        "brawn": 1,
+        "image": "/vCardPNGS/VCard_MA.png"
+	    
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Nebula",
-                "attack": 3,
-                "brawn": 2,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_N.png"
-            }
-	    ]
+        "name": "Nebula",
+        "attack": 3,
+        "brawn": 2,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_N.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Proxima Midnight",
-                "attack": 3,
-                "brawn": 1,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_PM.png"
-            }
-	    ]
+        "name": "Proxima Midnight",
+        "attack": 3,
+        "brawn": 1,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_PM.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Quicksilver",
-                "attack": 4,
-                "power": 2,
-                "image": "/vCardPNGS/VCard_Q.png"
-            }
-	    ]
+        "name": "Quicksilver",
+        "attack": 4,
+        "power": 2,
+        "image": "/vCardPNGS/VCard_Q.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Red Skull",
-                "attack": 3,
-                "brawn": 2,
-                "image": "/vCardPNGS/VCard_RS.png"
-            }
-	    ]
+        "name": "Red Skull",
+        "attack": 3,
+        "brawn": 2,
+        "image": "/vCardPNGS/VCard_RS.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Ronan The Accuser",
-                "attack": 4,
-                "brawn": 3,
-                "power": 1,
-                "image": "/vCardPNGS/VCard_RTA.png"
-            }
-	    ]
+        "name": "Ronan The Accuser",
+        "attack": 4,
+        "brawn": 3,
+        "power": 1,
+        "image": "/vCardPNGS/VCard_RTA.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Surtur",
-                "attack": 6,
-                "brawn": 3,
-                "power": 2,
-                "image": "/vCardPNGS/VCard_S.png"
-            }
-	    ]
+        "name": "Surtur",
+        "attack": 6,
+        "brawn": 3,
+        "power": 2,
+        "image": "/vCardPNGS/VCard_S.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Scarlet Witch",
-                "attack": 4,
-                "power": 2,
-                "image": "/vCardPNGS/VCard_SW_Untrained.png"
-            }
-	    ]
+        "name": "Scarlet Witch",
+        "attack": 4,
+        "power": 2,
+        "image": "/vCardPNGS/VCard_SW_Untrained.png"
     },
     {
         "cost": 3,
-        "levels": [
-            {
-                "name": "Thanos",
-                "attack": 7,
-                "brawn": 3,
-                "image": "/vCardPNGS/VCard_T.png"
-            }
-	    ]
+        "name": "Thanos",
+        "attack": 7,
+        "brawn": 3,
+        "image": "/vCardPNGS/VCard_T.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Talos",
-                "attack": 2,
-                "power": 1,
-                "image": "/vCardPNGS/VCard_Tal.png"
-            }
-	    ]
+        "name": "Talos",
+        "attack": 2,
+        "power": 1,
+        "image": "/vCardPNGS/VCard_Tal.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "The Destroyer",
-                "attack": 4,
-                "power": 1,
-                "tech": 1,
-                "image": "/vCardPNGS/VCard_TD.png"
-            }
-	    ]
+        "name": "The Destroyer",
+        "attack": 4,
+        "power": 1,
+        "tech": 1,
+        "image": "/vCardPNGS/VCard_TD.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "The Mandarin",
-                "attack": 1,
-                "image": "/vCardPNGS/VCard_TM.png"
-            }
-	    ]
+        "name": "The Mandarin",
+        "attack": 1,
+        "image": "/vCardPNGS/VCard_TM.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "The Shocker",
-                "attack": 2,
-                "tech": 1,
-                "image": "/vCardPNGS/VCard_TS.png"
-            }
-	    ]
+        "name": "The Shocker",
+        "attack": 2,
+        "tech": 1,
+        "image": "/vCardPNGS/VCard_TS.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Ultron",
-                "attack": 5,
-                "tech": 3,
-                "image": "/vCardPNGS/VCard_U.png"
-            }
-	    ]
+        "name": "Ultron",
+        "attack": 5,
+        "tech": 3,
+        "image": "/vCardPNGS/VCard_U.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Ulysses Klaue",
-                "attack": 2,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_UK.png"
-            }
-	    ]
+        "name": "Ulysses Klaue",
+        "attack": 2,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_UK.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Vulture",
-                "attack": 3,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_V.png"
-            }
-	    ]
+        "name": "Vulture",
+        "attack": 3,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_V.png"
     },
     {    
         "cost": 1,
-        "levels": [
-            {
-                "name": "Whiplash",
-                "attack": 3,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_W.png"
-            }
-	    ]
+        "name": "Whiplash",
+        "attack": 3,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_W.png"
     },
     {
         "cost": 2,
-        "levels": [
-            {
-                "name": "Yondu",
-                "attack": 4,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_Y.png"
-            }
-	    ]
+        "name": "Yondu",
+        "attack": 4,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_Y.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "YellowJacket",
-                "attack": 3,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_YJ.png"
-            }
-	    ]
+        "name": "YellowJacket",
+        "attack": 3,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_YJ.png"
     },
     {
         "cost": 1,
-        "levels": [
-            {
-                "name": "Yon-Rogg",
-                "attack": 3,
-                "brawn": 1,
-                "tech": 2,
-                "image": "/vCardPNGS/VCard_YR.png"
-            }
-	    ]
+        "name": "Yon-Rogg",
+        "attack": 3,
+        "brawn": 1,
+        "tech": 2,
+        "image": "/vCardPNGS/VCard_YR.png"
     }
 ]
