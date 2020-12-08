@@ -242,6 +242,263 @@
         ]
     },
     {
-        "cost": 
-    }
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Iron Man",
+                "subtitle": "Mark I",
+                "attack": 2,
+                "tech": 1,
+                "image": "IM_Mark_I.png"
+            },
+            {
+                "name": "Iron Man",
+                "subtitle": "Mark III",
+                "attack": 3,
+                "tech": 2,
+                "image": "IM_Mark_III.png"
+            },
+            {
+                "name": "Iron Man",
+                "subtitle": "Mark XLII",
+                "attack": 4,
+                "tech": 3,
+                "image": "IM_Mark_XLII.png"
+            },
+            {
+                "name": "Iron Man",
+                "subtitle": "Mark L",
+                "attack": 5,
+                "tech": 4,
+                "image": "IM_Mark_L.png"
+            },
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Korg",
+                "attack": 2,
+                "brawn": 2,
+                "image": "K.png"
+            },
+	]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Mantis",
+                "attack": 1,
+                "power": 3,
+                "image": "M.png"
+            },
+	]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Okoye",
+                "attack": 2,
+                "brawn": 1,
+                "tech": 1,
+                "image": "O.png"
+            },
+	]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Peggy Carter",
+                "attack": 2,
+                "brawn": 1,
+                "image": "PC.png"
+            },
+	]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Pepper Potts",
+                "subtitle": "Normal",
+                "attack": 1,
+                "tech": 1,
+                "image": "PP_Normal.png"
+            },
+            {
+                "name": "Pepper Potts",
+                "subtitle": "Evolved",
+                "attack": 3,
+                "power": 2,
+                "tech": 1,
+                "image": "PP_Evolved.png"
+            },
+            {
+                "name": "Pepper Potts",
+                "subtitle": "Rescue",
+                "attack": 4,
+                "tech": 3,
+                "image": "PP_Rescue.png"
+            },
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Rocket Raccoon",
+                "attack": 3,
+                "tech": 2,
+                "image": "RR.png"
+            },
+	]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Star-Lord",
+                "attack": 3,
+                "tech": 1,
+                "image": "SL.png"
+            },
+	]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "Spider-Man",
+                "subtitle": "Homemade",
+                "attack": 2,
+                "brawn": 2,
+                "tech": 1,
+                "image": "SM_Homemade.png"
+            },
+            {
+                "name": "Spider-Man",
+                "subtitle": "Stark Suit",
+                "attack": 3,
+                "brawn": 2,
+                "tech": 2,
+                "image": "SM_Stark_Suit.png"
+            },
+            {
+                "name": "Spider-Man",
+                "subtitle": "Iron Spider",
+                "attack": 4,
+                "brawn": 2,
+                "tech": 3,
+                "image": "SM_Iron_Spider.png"
+            },
+        ]
+    },
+    {
+        "cost": 0,
+        "levels": [
+            {
+                "name": "Scarlet Witch",
+                "subtitle": "Honed",
+                "attack": 6,
+                "power": 3,
+                "image": "SW_Honed.png"
+            }
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Thor",
+                "subtitle": "Son Of Odin",
+                "attack": 4,
+                "brawn": 3,
+                "power": 1,
+                "image": "T_Son_Of_Odin.png"
+            },
+            {
+                "name": "Thor",
+                "subtitle": "Awakened",
+                "attack": 5,
+                "brawn": 3,
+                "power": 2,
+                "image": "T_Awakened.png"
+            },
+            {
+                "name": "Thor",
+                "subtitle": "Stormbreaker",
+                "attack": 6,
+                "brawn": 3,
+                "power": 3,
+                "image": "T_Strombreaker.png"
+            },
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Vision",
+                "subtitle": "The Mind Stone",
+                "attack": 5,
+                "brawn": 2,
+                "power": 2,
+                "tech": 2,
+                "image": "V.png"
+            },
+        ]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Valkyrie",
+                "attack": 4,
+                "brawn": 3,
+                "image": "Val.png"
+            },
+	]
+    },
+    {
+        "cost": 2,
+        "levels": [
+            {
+                "name": "Wasp",
+                "attack": 3,
+                "brawn": 1,
+                "tech": 2,
+                "image": "W.png"
+            },
+	]
+    },
+    {
+        "cost": 1,
+        "levels": [
+            {
+                "name": "War Machine",
+                "subtitle": "Mark I",
+                "attack": 2,
+                "tech": 2,
+                "image": "WM_Mark_I.png"
+            },
+            {
+                "name": "War Machine",
+                "subtitle": "Iron Patriot",
+                "attack": 3,
+                "tech": 2,
+                "image": "WM_Iron_Patriot.png"
+            },
+            {
+                "name": "War Machine"",
+                "subtitle": "Mark III",
+                "attack": 4,
+                "tech": 2,
+                "image": "WM_Mark_III.png"
+            },
+        ]
+    },
 ]
