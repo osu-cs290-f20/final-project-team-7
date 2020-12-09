@@ -6,6 +6,8 @@ const port = process.env.PORT || 3000
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     res.status(200).render('game');
 })

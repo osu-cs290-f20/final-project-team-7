@@ -7,7 +7,9 @@
     "start": "node server.js",
     "test": "echo Hello, world",
     "build": "handlebars views/partials/heroCard.handlebars views/partials/villainCard.handlebars -f public/cardTemplates.js",
-    "prestart": "npm run build"
+    "dev": "nodemon server.js",
+    "prestart": "npm run build",
+    "predev": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "nodemon": "^2.0.6"
   }
 }
