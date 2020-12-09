@@ -1,3 +1,6 @@
+# Compiled Handlebars templates
+/public/cardTemplates.js
+
 # Vim swapfiles
 .*.swp
 
