@@ -45,52 +45,54 @@
 
 
     <div class= "battlefield">
-    <div class="villain-card-table">
-      <!--
-        This is where the selected villain card and stats go
-      -->
-      <div id="villain-card-spot">
+      <div class="villain-card-table">
         <!--
-          Image of card here
+          This is where the selected villain card and stats go
         -->
-      </div>
-      <div class="villain-data-boxes">
-        <div class="attack-total">
+        <div id="villain-card-spot">
           <!--
-            Calculated total attack damage goes here
+            Image of card here
           -->
         </div>
-        <div class="dice-roll">
-          <!--
-            Villain dice roll goes here
-          -->
+        <div class="villain-data-boxes">
+          <div class="attack-total">
+            <!--
+              Calculated total attack damage goes here
+            -->
+          </div>
+          <div class="dice-roll">
+            <!--
+              Villain dice roll goes here
+            -->
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="hero-card-table">
-      <!--
-        This is where the selected hero card and stats go
-      -->
-      <div id="hero-card-spot">
+      <button id="start-turn-button" class="roll-button">Roll</button>
+
+      <div class="hero-card-table">
         <!--
-          Image of card here
+          This is where the selected hero card and stats go
         -->
-      </div>
-      <div class="hero-data-boxes">
-        <div class="attack-total">
-          <!--
-            Calculated total attack damage goes here
-          -->
+        <div class="hero-data-boxes">
+          <div class="attack-total">
+            <!--
+              Calculated total attack damage goes here
+            -->
+          </div>
+          <div class="dice-roll">
+            <!--
+              Hero dice roll goes here
+            -->
+          </div>
         </div>
-        <div class="dice-roll">
+        <div id="hero-card-spot">
           <!--
-            Hero dice roll goes here
+            Image of card here
           -->
         </div>
       </div>
     </div>
-  </div>
 
     <div id="hero-card-options" class="card-hand">
         {{#each heroes}}
