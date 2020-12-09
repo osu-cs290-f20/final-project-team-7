@@ -1,4 +1,5 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 
 const crypto = require('crypto');
@@ -75,10 +76,13 @@ function getPlayer(req, res, callback, create) {
 
 app.use(cookieParser());
 
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 app.get('/', (req, res) => {
     getPlayer(req, res, (err, player) => {
         player.requests += 1;
-        res.send(`You have made ${player.requests} requests.`);
+        res.status(200).render('game', {player: player});
     }, true);
 });
 
