@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "start": "node server.js",
     "test": "echo Hello, world",
     "build": "handlebars views/partials/heroCard.handlebars views/partials/villainCard.handlebars -f public/cardTemplates.js",
-    "dev": "nodemon server.js",
     "prestart": "npm run build",
     "predev": "npm run build"
   },
@@ -22,9 +22,17 @@
   },
   "homepage": "https://github.com/osu-cs290-f20/final-project-team-7#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.6"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.6"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data/"
+    ]
   }
 }

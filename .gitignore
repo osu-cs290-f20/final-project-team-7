@@ -1,6 +1,12 @@
 # Compiled Handlebars templates
 /public/cardTemplates.js
 
+# Vim swapfiles
+.*.swp
+
+# Server JSON data storage
+/data/
+
 
 # Logs
 logs
