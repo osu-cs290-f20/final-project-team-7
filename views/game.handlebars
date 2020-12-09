@@ -1,14 +1,12 @@
 <main class = "content">
 <!--Not sure if I am going to keep this section as a header or not, causes background.-->
-    <main class="content">
-      <header>
       <aside class="menu-container-left">
 
         <!--
           Dont know if we need a menu, but it was on the layout so it's here for now
         -->
 
-        <div class = "menu-container-left">
+        <div class = "menu-newgame-left">
         <h2>Menu</h2>
           <div class = "NG-button">
             <button id="new-game-button" class="action-button">New Game</button>
@@ -16,28 +14,25 @@
         </div>
 
 
-        <div class = "menu-container-left">
+        <div class = "menu-store-left">
             <h3>1 Cost Heroes</h3>
             <div class = "hero-decks">
-              <button id="level-1-hero-button" class="deck-one-button">Level 1 Hero</button>
+              <button id="level-1-hero-button" class="deck-one-button">Level 1 Hero Deck</button>
               <!--Find a way to make the button pull a 1 cost hero and take one of the players' cost points.-->
             </div>
             <h3>2 Cost Heroes</h3>
             <div class = "hero-decks">
-              <button id="level-2-hero-button" class="deck-two-button">Level 2 Hero</button>
+              <button id="level-2-hero-button" class="deck-two-button">Level 2 Hero Deck</button>
               <!--Find a way to make the button pull a 2 cost hero and take two of the players' cost points.-->
             </div>
           </div>
 
       </aside>
-      </header>
-    </main>
 
 
 
 <section id="card-table">
   <div class="battle-zone">
-    <div class = "villain cards">
       <div id="villain-card-options" class="card-hand">
         <!--
           This is were people chose which villain they want to fight
@@ -47,13 +42,14 @@
           {{>villainCard}}
         {{/each}}
       </div>
-    </div>
 
+
+    <div class= "battlefield">
     <div class="villain-card-table">
       <!--
         This is where the selected villain card and stats go
       -->
-      <div class="villain-card-spot">
+      <div id="villain-card-spot">
         <!--
           Image of card here
         -->
@@ -76,7 +72,7 @@
       <!--
         This is where the selected hero card and stats go
       -->
-      <div class="hero-card-spot">
+      <div id="hero-card-spot">
         <!--
           Image of card here
         -->
@@ -94,6 +90,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     <div id="hero-card-options" class="card-hand">
         {{#each heroes}}
@@ -101,6 +98,8 @@
         {{/each}}
     </div>
   </div>
+
+</section>
 
   <div class="card-purchace-table">
     <div class="points-gained">
@@ -110,5 +109,3 @@
     </div>
 
   </div>
-
-</section>
