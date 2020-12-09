@@ -1,23 +1,60 @@
+<main class = "content">
+<!--Not sure if I am going to keep this section as a header or not, causes background.-->
+    <main class="content">
+      <header>
+      <aside class="menu-container-left">
+
+        <!--
+          Dont know if we need a menu, but it was on the layout so it's here for now
+        -->
+
+        <div class = "menu-container-left">
+        <h2>Menu</h2>
+          <div class = "NG-button">
+            <button id="new-game-button" class="action-button">New Game</button>
+          </div>
+        </div>
+
+
+        <div class = "menu-container-left">
+            <h3>1 Cost Heroes</h3>
+            <div class = "hero-decks">
+              <button id="level-1-hero-button" class="deck-one-button">Level 1 Hero</button>
+              <!--Find a way to make the button pull a 1 cost hero and take one of the players' cost points.-->
+            </div>
+            <h3>2 Cost Heroes</h3>
+            <div class = "hero-decks">
+              <button id="level-2-hero-button" class="deck-two-button">Level 2 Hero</button>
+              <!--Find a way to make the button pull a 2 cost hero and take two of the players' cost points.-->
+            </div>
+          </div>
+
+      </aside>
+      </header>
+    </main>
+
+
+
 <section id="card-table">
   <p>You have made {{player.requests}} requests.</p>
   <div class="battle-zone">
-    <div id="villain-card-options" class="card-hand">
-      <!--
-        This is were people chose which villain they want to fight
-      -->
-
-      <div class="villain-card-1">
+    <div class = "villain cards">
+      <div id="villain-card-options" class="card-hand">
         <!--
-          This is where the first of three random villain cards go
+          This is were people chose which villain they want to fight
         -->
-      </div>
 
-      <div class="villain-card-2">
+        <div class="villain-card-1">
+          <!--
+            This is where the first of three random villain cards go
+          -->
+        </div>
 
-      </div>
+        <div class="villain-card-2">
+        </div>
 
-      <div class="villain-card-3">
-
+        <div class="villain-card-3">
+        </div>
       </div>
     </div>
 
@@ -86,12 +123,7 @@
         display points here
       -->
     </div>
-    <div class="hero-decks">
-      <h3>Cost 1</h3>
-      <button id="level-1-hero-button" class="action-button">Level 1 Hero</button>
-      <h3>Cost 2</h3>
-      <button id="level-2-hero-button" class="action-button">Level 2 Hero</button>
-    </div>
+
   </div>
 
 </section>
