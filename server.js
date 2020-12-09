@@ -94,14 +94,14 @@ function getPlayerMiddleware(req, res, next) {
         req.session = crypto.randomBytes(SESSION_LEN).toString('hex');
         req.player = newPlayer();
     }
-    res.cookie(SESSION_COOKIE, session);
+    res.cookie(SESSION_COOKIE, req.session);
 
     next();
 
     // Save the (potentially-updated) player state
-    players[session] = req.player;
+    players[req.session] = req.player;
     var json = JSON.stringify(req.player);
-    fs.writeFile(`${PLAYERS_DIR}/${session}.json`, json, (err) => {
+    fs.writeFile(`${PLAYERS_DIR}/${req.session}.json`, json, (err) => {
         if (err) console.log(`Failed to write player data: ${err}`);
     });
 }
@@ -197,15 +197,15 @@ app.post('/play', (req, res) => {
 
 app.post('/upgrade/:card', (req, res) => {
     var player = req.player;
-    var card = req.params(card);
+    var card = req.params.card;
     
     if (card == "1") {
         if (player.level1Deck.length == 0) {
-            res.response(403).send('Level 1 deck empty');
+            res.status(403).send('Level 1 deck empty');
             return;
         }
         if (player.money < 1) {
-            res.response(403).send("You don't have enough points");
+            res.status(403).send("You don't have enough points");
             return;
         }
 
@@ -216,11 +216,11 @@ app.post('/upgrade/:card', (req, res) => {
         });
     } else if (card == "2") {
         if (player.level2Deck.length == 0) {
-            res.response(403).send('Level 1 deck empty');
+            res.status(403).send('Level 1 deck empty');
             return;
         }
         if (player.money < 2) {
-            res.response(403).send("You don't have enough points");
+            res.status(403).send("You don't have enough points");
             return;
         }
 
@@ -231,20 +231,20 @@ app.post('/upgrade/:card', (req, res) => {
         });
     } else {
         // Get the index of the selected card in the player's hand
-        var heroIndex = player.heroes.findIndex((card) => 
-            HERO_CARDS[card.index].levels[card.level].name === req.body.hero
+        var heroIndex = player.heroes.findIndex((playerCard) =>
+            HERO_CARDS[playerCard.index].levels[playerCard.level].name === card
         );
         if (heroIndex == -1) {
-            res.response(403).send("You don't have that card.");
+            res.status(403).send("You don't have that card.");
             return;
         }
         if (player.money < 1) {
-            res.response(403).send("You don't have enough points");
+            res.status(403).send("You don't have enough points");
             return;
         }
         var newLevel = player.heroes[heroIndex].level + 1;
         if (newLevel >= HERO_CARDS[player.heroes[heroIndex].index].levels.length) {
-            res.response(403).send("That card is already fully upgraded.");
+            res.status(403).send("That card is already fully upgraded.");
             return;
         }
 
@@ -252,7 +252,7 @@ app.post('/upgrade/:card', (req, res) => {
         player.heroes[heroIndex].level = newLevel;
     }
 
-    res.response(200).send({
+    res.status(200).send({
         money: player.money,
         cards: getCardInfo(player)
     });
