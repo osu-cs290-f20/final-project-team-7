@@ -12,14 +12,14 @@ for (var i = 0; i < heroCardHand.length; i++)   {
 }
 
 function selectHeroListener(event)  {
-    console.log("hero card clicked")
+    // console.log("hero card clicked")
     var selectedHeroCard = event.currentTarget;
 
     if (selectedHeroSpot.childElementCount == 0) {
         selectedHeroSpot.appendChild(selectedHeroCard);
     }
    else {
-       console.log(selectedHeroSpot.children[0])
+    //    console.log(selectedHeroSpot.children[0])
        selectedHeroSpot.children[0] = selectedHeroCard;
    }
 }
@@ -29,7 +29,7 @@ for (var i = 0; i < villainCardHand.length; i++)    {
 }
 
 function selectVillainListener(event)   {
-    console.log("villain card clicked")
+    // console.log("villain card clicked")
     
     var selectedVillainCard = event.currentTarget;
 
@@ -39,7 +39,7 @@ function selectVillainListener(event)   {
         selectedVillainSpot.appendChild(selectedVillainCard);
     }
    else {
-       console.log(selectedVillainSpot.children[0])
+    //    console.log(selectedVillainSpot.children[0])
        selectedVillainSpot.children[0] = selectedVillainCard;
    }
 }
