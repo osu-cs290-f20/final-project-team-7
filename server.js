@@ -79,41 +79,34 @@ function newPlayer() {
     return player;
 }
 
-/// Gets the player information using the sesion cookie.
-/// The provided callback function takes two parameters:
-///     the error message (if unsuccessful) and the player object (if successful).
-///     After the callback returns, the updated player information
-///     is automatically saved.
-/// The third argument (`create`) is optional. If present and `true`, a new
-///     session is created for players with a missing or invalid session cookie.
-///     In this case, the callback will never recieve an error.
-function getPlayer(req, res, callback, create) {
-    var session = req.cookies[SESSION_COOKIE];
-    var player;
-    if (session !== undefined) player = players[session];
+/// A middleware that looks up the player's session information.
+/// The session token is stored in req.session, and the player
+/// information is stored in req.player. After the request is processed,
+/// the session cookie is set on the response and the player is saved to disk.
+function getPlayerMiddleware(req, res, next) {
+    req.session = req.cookies[SESSION_COOKIE];
+    if (req.session !== undefined) req.player = players[req.session];
 
-    // Make sure the session is valid
-    if (player === undefined) {
-        if (create === true) {
-            // Create a new session
-            session = crypto.randomBytes(SESSION_LEN).toString('hex');
-            player = newPlayer();
-        } else {
-            callback("invalid session cookie");
-            return;
-        }
+    next();
+    // Include the cookie in the response
+    if (req.session !== undefined) {
+        res.cookie(SESSION_COOKIE, session);
     }
 
-    // Include the cookie in the response
-    res.cookie(SESSION_COOKIE, session);
-    callback(null, player);
-
     // Save the (potentially-updated) player state
-    players[session] = player;
-    var json = JSON.stringify(player);
-    fs.writeFile(`${PLAYERS_DIR}/${session}.json`, json, (err) => {
-        if (err) console.log(`Failed to write player data: ${err}`);
-    });
+    if (req.player !== undefined) {
+        players[session] = req.player;
+        var json = JSON.stringify(req.player);
+        fs.writeFile(`${PLAYERS_DIR}/${session}.json`, json, (err) => {
+            if (err) console.log(`Failed to write player data: ${err}`);
+        });
+    }
+}
+
+/// Creates a new session for the given request.
+function createNewSession(req) {
+    req.session = crypto.randomBytes(SESSION_LEN).toString('hex');
+    req.player = newPlayer();
 }
 
 /// Looks up cards for a given player (converting from the indexes
@@ -139,6 +132,7 @@ function checkStats(first, second) {
 
 app.use(cookieParser());
 app.use(express.json());
+app.use(getPlayerMiddleware);
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -146,61 +140,60 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    getPlayer(req, res, (err, player) => {
-        res.status(200).render('game', getCardInfo(player));
-    }, true);
+    if (req.player === undefined) createNewSession(req);
+    res.status(200).render('game', getCardInfo(req.player));
 });
 
 app.post('/play', (req, res) => {
-    getPlayer(req, res, (err, player) => {
-        if (err) {
-            res.redirect(303, '/');
+    var player = req.player;
+    if (player === undefined) {
+        res.redirect(303, '/');
+        return;
+    }
+
+    if (req.body && req.body.hero && req.body.villain) {
+        // Get the index of the selected cards in the player's hand
+        var heroIndex = player.heroes.findIndex((card) => HERO_CARDS[card.index].levels[card.level].name === req.body.hero);
+        var villainIndex  = player.villains.findIndex((card) => VILLAIN_CARDS[card.index].name === req.body.villain);
+        if (heroIndex == -1 || villainIndex == -1) {
+            res.status(404).send("You don't have that card.");
             return;
         }
-        if (req.body && req.body.hero && req.body.villain) {
-            // Get the index of the selected cards in the player's hand
-            var heroIndex = player.heroes.findIndex((card) => HERO_CARDS[card.index].levels[card.level].name === req.body.hero);
-            var villainIndex  = player.villains.findIndex((card) => VILLAIN_CARDS[card.index].name === req.body.villain);
-            if (heroIndex == -1 || villainIndex == -1) {
-                res.status(404).send("You don't have that card.");
-                return;
-            }
 
-            var hero = HERO_CARDS[player.heroes[heroIndex].index].levels[player.heroes[heroIndex].level];
-            var villain = VILLAIN_CARDS[player.villains[villainIndex].index];
+        var hero = HERO_CARDS[player.heroes[heroIndex].index].levels[player.heroes[heroIndex].level];
+        var villain = VILLAIN_CARDS[player.villains[villainIndex].index];
 
-            while (true) {
-                var heroDice = Math.floor(Math.random() * 6) + 1;
-                var villDice = Math.floor(Math.random() * 6) + 1;
-                var heroBoost = checkStats(hero, villain);
-                var villBoost = checkStats(villain, hero);
-                var heroScore = heroDice + hero.attack + heroBoost;
-                var villScore = villDice + villain.attack + villBoost;
+        while (true) {
+            var heroDice = Math.floor(Math.random() * 6) + 1;
+            var villDice = Math.floor(Math.random() * 6) + 1;
+            var heroBoost = checkStats(hero, villain);
+            var villBoost = checkStats(villain, hero);
+            var heroScore = heroDice + hero.attack + heroBoost;
+            var villScore = villDice + villain.attack + villBoost;
 
-                if (heroScore == villScore) continue; // Tie; roll again.
+            if (heroScore == villScore) continue; // Tie; roll again.
 
-                var win = (heroScore > villScore);
-                res.status(200).send({
-                    win: win,
-                    hero: {
-                        dice: heroDice,
-                        attack: hero.attack,
-                        boost: heroBoost,
-                        total: heroScore
-                    },
-                    villain: {
-                        dice: villDice,
-                        attack: villain.attack,
-                        boost: villBoost,
-                        total: villScore
-                    }
-                });
-                break;
-            }
-        } else {
-            res.status(400).send('Invalid request');
+            var win = (heroScore > villScore);
+            res.status(200).send({
+                win: win,
+                hero: {
+                    dice: heroDice,
+                    attack: hero.attack,
+                    boost: heroBoost,
+                    total: heroScore
+                },
+                villain: {
+                    dice: villDice,
+                    attack: villain.attack,
+                    boost: villBoost,
+                    total: villScore
+                }
+            });
+            break;
         }
-    });
+    } else {
+        res.status(400).send('Invalid request');
+    }
 });
 
 app.listen(port, () => {
