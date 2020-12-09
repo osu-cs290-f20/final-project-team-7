@@ -1,3 +1,7 @@
+# Compiled Handlebars templates
+/public/cardTemplates.js
+
+
 # Logs
 logs
 *.log
