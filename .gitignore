@@ -1,3 +1,10 @@
+# Vim swapfiles
+.*.swp
+
+# Server JSON data storage
+/data/
+
+
 # Logs
 logs
 *.log
