@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo Hello, world", 
-    "build": "handlebars views/partials/heroCard.handlebars -f public/heroCard.js", 
+    "build": "handlebars views/partials/heroCard.handlebars views/partials/villainCard.handlebars -f public/cardTemplates.js", 
     "prestart": "npm run build"
   },
   "repository": {
