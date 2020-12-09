@@ -36,7 +36,6 @@
 
 
 <section id="card-table">
-  <p>You have made {{player.requests}} requests.</p>
   <div class="battle-zone">
     <div class = "villain cards">
       <div id="villain-card-options" class="card-hand">
@@ -44,17 +43,9 @@
           This is were people chose which villain they want to fight
         -->
 
-        <div class="villain-card-1">
-          <!--
-            This is where the first of three random villain cards go
-          -->
-        </div>
-
-        <div class="villain-card-2">
-        </div>
-
-        <div class="villain-card-3">
-        </div>
+        {{#each villains}}
+          {{>villainCard}}
+        {{/each}}
       </div>
     </div>
 
@@ -105,15 +96,9 @@
     </div>
 
     <div id="hero-card-options" class="card-hand">
-      <!--
-        This is were people chose which villain they want to fight
-      -->
-
-      <div class="hero-card-1">
-        <!--
-          The size would change based on how many cards player has
-        -->
-      </div>
+        {{#each heroes}}
+          {{>heroCard}}
+        {{/each}}
     </div>
   </div>
 

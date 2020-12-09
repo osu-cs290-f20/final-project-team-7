@@ -36,12 +36,14 @@ for (var i = 0; i < files.length; i++) {
 // Initializes a player.
 function newPlayer() {
     return {
-      heroes: [
-        {index: 0, level: 0}
-      ],
-      villains: [
-        {index: 0}
-      ]
+        heroes: [
+            {index: 0, level: 0}
+        ],
+        villains: [
+            {index: 0},
+            {index: 1},
+            {index: 2}
+        ]
     };
 }
 
