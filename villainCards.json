@@ -7,10 +7,10 @@
                 "attack": 6,
                 "brawn": 3,
                 "image": "/vCardPNGS/VCard_A.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -18,10 +18,10 @@
                 "attack": 4,
                 "power": 2,
                 "image": "/vCardPNGS/VCard_AK.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -29,10 +29,10 @@
                 "attack": 3,
                 "brawn": 2,
                 "image": "/vCardPNGS/VCard_BB_Winter_Soldier.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -40,10 +40,10 @@
                 "attack": 3,
                 "brawn": 2,
                 "image": "/vCardPNGS/VCard_CB.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -52,10 +52,10 @@
                 "brawn": 1,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_CG.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -64,10 +64,10 @@
                 "brawn": 2,
                 "tech": 1,
                 "image": "/vCardPNGS/VCard_CO.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -75,10 +75,10 @@
                 "attack": 6,
                 "power": 3,
                 "image": "/vCardPNGS/VCard_E.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -87,10 +87,10 @@
                 "brawn": 2,
                 "tech": 3,
                 "image": "/vCardPNGS/VCard_EK.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {    
         "cost": 2,
         "levels": [
             {
@@ -98,10 +98,10 @@
                 "attack": 6,
                 "power": 3,
                 "image": "/vCardPNGS/VCard_EM.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -109,10 +109,10 @@
                 "attack": 2,
                 "Power": 3,
                 "image": "/vCardPNGS/VCard_G.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 3,
         "levels": [
             {
@@ -120,10 +120,10 @@
                 "attack": 8,
                 "power": 3,
                 "image": "/vCardPNGS/VCard_H.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -131,10 +131,10 @@
                 "attack": 3,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_A.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -142,10 +142,10 @@
                 "attack": 5,
                 "tech": 3,
                 "image": "/vCardPNGS/VCard_K.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -154,10 +154,10 @@
                 "brawn": 2,
                 "power": 3,
                 "image": "/vCardPNGS/VCard_KL.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -166,10 +166,10 @@
                 "brawn": 2,
                 "power": 3,
                 "image": "/vCardPNGS/VCard_L.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -178,10 +178,10 @@
                 "brawn": 2,
                 "power": 1,
                 "image": "/vCardPNGS/VCard_M.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -189,10 +189,10 @@
                 "attack": 2,
                 "brawn": 1,
                 "image": "/vCardPNGS/VCard_MA.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -201,10 +201,10 @@
                 "brawn": 2,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_N.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -213,10 +213,10 @@
                 "brawn": 1,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_PM.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -224,10 +224,10 @@
                 "attack": 4,
                 "power": 2,
                 "image": "/vCardPNGS/VCard_Q.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -235,10 +235,10 @@
                 "attack": 3,
                 "brawn": 2,
                 "image": "/vCardPNGS/VCard_RS.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -247,10 +247,10 @@
                 "brawn": 3,
                 "power": 1,
                 "image": "/vCardPNGS/VCard_RTA.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -259,10 +259,10 @@
                 "brawn": 3,
                 "power": 2,
                 "image": "/vCardPNGS/VCard_S.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -270,10 +270,10 @@
                 "attack": 4,
                 "power": 2,
                 "image": "/vCardPNGS/VCard_SW_Untrained.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 3,
         "levels": [
             {
@@ -281,10 +281,10 @@
                 "attack": 7,
                 "brawn": 3,
                 "image": "/vCardPNGS/VCard_T.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -292,10 +292,10 @@
                 "attack": 2,
                 "power": 1,
                 "image": "/vCardPNGS/VCard_Tal.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -304,20 +304,20 @@
                 "power": 1,
                 "tech": 1,
                 "image": "/vCardPNGS/VCard_TD.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
                 "name": "The Mandarin",
                 "attack": 1,
                 "image": "/vCardPNGS/VCard_TM.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -325,10 +325,10 @@
                 "attack": 2,
                 "tech": 1,
                 "image": "/vCardPNGS/VCard_TS.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -336,10 +336,10 @@
                 "attack": 5,
                 "tech": 3,
                 "image": "/vCardPNGS/VCard_U.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -347,10 +347,10 @@
                 "attack": 2,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_UK.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -358,10 +358,10 @@
                 "attack": 3,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_V.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {    
         "cost": 1,
         "levels": [
             {
@@ -369,10 +369,10 @@
                 "attack": 3,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_W.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 2,
         "levels": [
             {
@@ -380,10 +380,10 @@
                 "attack": 4,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_Y.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -391,10 +391,10 @@
                 "attack": 3,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_YJ.png"
-            },
-	]
+            }
+	    ]
     },
-    }
+    {
         "cost": 1,
         "levels": [
             {
@@ -403,9 +403,7 @@
                 "brawn": 1,
                 "tech": 2,
                 "image": "/vCardPNGS/VCard_YR.png"
-            },
-	]
-    },
-
-
+            }
+	    ]
+    }
 ]
