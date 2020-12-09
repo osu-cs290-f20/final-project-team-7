@@ -60,6 +60,9 @@ function newPlayer() {
         // is an object with one integer property, 'index'.
         villains: [],
 
+        money: 0,
+        score: 0,
+
         // An array of indices in HERO_CARDS.
         level1Deck: shuffle(level1Heroes),
         level2Deck: shuffle(level2Heroes),
@@ -87,26 +90,20 @@ function getPlayerMiddleware(req, res, next) {
     req.session = req.cookies[SESSION_COOKIE];
     if (req.session !== undefined) req.player = players[req.session];
 
-    next();
-    // Include the cookie in the response
-    if (req.session !== undefined) {
-        res.cookie(SESSION_COOKIE, session);
+    if (req.player === undefined) {
+        req.session = crypto.randomBytes(SESSION_LEN).toString('hex');
+        req.player = newPlayer();
     }
+    res.cookie(SESSION_COOKIE, session);
+
+    next();
 
     // Save the (potentially-updated) player state
-    if (req.player !== undefined) {
-        players[session] = req.player;
-        var json = JSON.stringify(req.player);
-        fs.writeFile(`${PLAYERS_DIR}/${session}.json`, json, (err) => {
-            if (err) console.log(`Failed to write player data: ${err}`);
-        });
-    }
-}
-
-/// Creates a new session for the given request.
-function createNewSession(req) {
-    req.session = crypto.randomBytes(SESSION_LEN).toString('hex');
-    req.player = newPlayer();
+    players[session] = req.player;
+    var json = JSON.stringify(req.player);
+    fs.writeFile(`${PLAYERS_DIR}/${session}.json`, json, (err) => {
+        if (err) console.log(`Failed to write player data: ${err}`);
+    });
 }
 
 /// Looks up cards for a given player (converting from the indexes
@@ -140,16 +137,11 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    if (req.player === undefined) createNewSession(req);
     res.status(200).render('game', getCardInfo(req.player));
 });
 
 app.post('/play', (req, res) => {
     var player = req.player;
-    if (player === undefined) {
-        res.redirect(303, '/');
-        return;
-    }
 
     if (req.body && req.body.hero && req.body.villain) {
         // Get the index of the selected cards in the player's hand
@@ -174,8 +166,14 @@ app.post('/play', (req, res) => {
             if (heroScore == villScore) continue; // Tie; roll again.
 
             var win = (heroScore > villScore);
+            if (win) {
+                player.money += villain.cost;
+                player.score += villain.cost;
+            }
             res.status(200).send({
                 win: win,
+                money: player.money,
+                score: player.score,
                 hero: {
                     dice: heroDice,
                     attack: hero.attack,
@@ -187,13 +185,77 @@ app.post('/play', (req, res) => {
                     attack: villain.attack,
                     boost: villBoost,
                     total: villScore
-                }
+                },
+                cards: getCardInfo(player)
             });
             break;
         }
     } else {
         res.status(400).send('Invalid request');
     }
+});
+
+app.post('/upgrade/:card', (req, res) => {
+    var player = req.player;
+    var card = req.params(card);
+    
+    if (card == "1") {
+        if (player.level1Deck.length == 0) {
+            res.response(403).send('Level 1 deck empty');
+            return;
+        }
+        if (player.money < 1) {
+            res.response(403).send("You don't have enough points");
+            return;
+        }
+
+        player.money -= 1;
+        player.heroes.push({
+            index: player.level1Deck.pop(),
+            level: 0
+        });
+    } else if (card == "2") {
+        if (player.level2Deck.length == 0) {
+            res.response(403).send('Level 1 deck empty');
+            return;
+        }
+        if (player.money < 2) {
+            res.response(403).send("You don't have enough points");
+            return;
+        }
+
+        player.money -= 2;
+        player.heroes.push({
+            index: player.level2Deck.pop(),
+            level: 0
+        });
+    } else {
+        // Get the index of the selected card in the player's hand
+        var heroIndex = player.heroes.findIndex((card) => 
+            HERO_CARDS[card.index].levels[card.level].name === req.body.hero
+        );
+        if (heroIndex == -1) {
+            res.response(403).send("You don't have that card.");
+            return;
+        }
+        if (player.money < 1) {
+            res.response(403).send("You don't have enough points");
+            return;
+        }
+        var newLevel = player.heroes[heroIndex].level + 1;
+        if (newLevel >= HERO_CARDS[player.heroes[heroIndex].index].levels.length) {
+            res.response(403).send("That card is already fully upgraded.");
+            return;
+        }
+
+        player.money -= 1;
+        player.heroes[heroIndex].level = newLevel;
+    }
+
+    res.response(200).send({
+        money: player.money,
+        cards: getCardInfo(player)
+    });
 });
 
 app.listen(port, () => {
