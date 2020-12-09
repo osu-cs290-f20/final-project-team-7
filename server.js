@@ -27,24 +27,56 @@ for (var i = 0; i < files.length; i++) {
         console.log("Loading", files[i]);
 
         var json = fs.readFileSync(PLAYERS_DIR + '/' + files[i]);
-        var player = JSON.parse(json);
         var session = files[i].substr(0, files[i].length - '.json'.length);
         players[session] = JSON.parse(json);
     }
 }
 
+/// Performs an in-place Fisher-Yates shuffle. Also returns the array.
+function shuffle(array) {
+    for (var i = 0; i < array.length; i++) {
+        // Grab a random element from the unshuffled portion
+        // of the array and swap it with this index.
+        var targetIndex = i + Math.floor(Math.random() * (array.length - i));
+        var old = array[i];
+        array[i] = array[targetIndex];
+        array[targetIndex] = old;
+    }
+
+    return array;
+}
+
 // Initializes a player.
 function newPlayer() {
-    return {
-        heroes: [
-            {index: 0, level: 0}
-        ],
-        villains: [
-            {index: 0},
-            {index: 1},
-            {index: 2}
-        ]
+    var level1Heroes = [...HERO_CARDS.keys()].filter((index) => HERO_CARDS[index].cost == 1);
+    var level2Heroes = [...HERO_CARDS.keys()].filter((index) => HERO_CARDS[index].cost == 2);
+
+    var player = {
+        // The currently active hero cards. Each element 
+        // is an object with integer properties 'index' and 'level'.
+        heroes: [],
+
+        // The currently active villain cards. Each element
+        // is an object with one integer property, 'index'.
+        villains: [],
+
+        // An array of indices in HERO_CARDS.
+        level1Deck: shuffle(level1Heroes),
+        level2Deck: shuffle(level2Heroes),
+
+        // An array of indices in VILLAIN_CARDS.
+        villainDeck: shuffle([...VILLAIN_CARDS.keys()])
     };
+    player.heroes.push({
+        index: player.level1Deck.pop(),
+        level: 0
+    });
+    for (var i = 0; i < 3; i++) {
+        player.villains.push({
+            index: player.villainDeck.pop()
+        });
+    }
+    return player;
 }
 
 /// Gets the player information using the sesion cookie.
@@ -87,6 +119,7 @@ function getPlayer(req, res, callback, create) {
 /// Looks up cards for a given player (converting from the indexes
 ///     in the player object to the names and stats).
 function getCardInfo(player) {
+    console.log(player);
     return {
             heroes: player.heroes.map((card) => HERO_CARDS[card.index].levels[card.level]),
             villains: player.villains.map((card) => VILLAIN_CARDS[card.index])
