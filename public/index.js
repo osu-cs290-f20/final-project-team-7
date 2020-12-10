@@ -38,6 +38,7 @@ function selectHeroListener(event)  {
     brawnStatContainer[1].innerText = selectedHeroCard.firstElementChild.dataset.brawn;
     powerStatContainer[1].innerText = selectedHeroCard.firstElementChild.dataset.power;
     techStatContainer[1].innerText = selectedHeroCard.firstElementChild.dataset.tech;
+    heroAttackContainer.innerText = selectedHeroCard.firstElementChild.dataset.attack;
 
 
     if (selectedHeroSpot.childElementCount == 0) {
@@ -61,6 +62,8 @@ function selectVillainListener(event)   {
     brawnStatContainer[0].innerText = selectedVillainCard.firstElementChild.dataset.brawn;
     powerStatContainer[0].innerText = selectedVillainCard.firstElementChild.dataset.power;
     techStatContainer[0].innerText = selectedVillainCard.firstElementChild.dataset.tech;
+    villainAttackContainer.innerText = selectedVillainCard.firstElementChild.dataset.attack;
+
 
     if (selectedVillainSpot.childElementCount == 0) {
         selectedVillainSpot.appendChild(selectedVillainCard);
@@ -185,10 +188,7 @@ function playCardListener(event)    {
                     villainDiceContainer.innerText = "\u2685"
                 }
 
-                heroAttackContainer.innerText = responseBody.hero.attack;
                 finalTotalContainer[1].innerText = responseBody.hero.total;
-
-                villainAttackContainer.innerText = responseBody.villain.attack;
                 finalTotalContainer[0].innerText = responseBody.villain.total;
 
                 pointsCounterContainer.innerText = responseBody.money;
