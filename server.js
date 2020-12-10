@@ -93,7 +93,7 @@ function getPlayerMiddleware(req, res, next) {
         req.session = crypto.randomBytes(SESSION_LEN).toString('hex');
         req.player = newPlayer();
     }
-    res.cookie(SESSION_COOKIE, req.session);
+    res.cookie(SESSION_COOKIE, req.session, {sameSite: 'Lax'});
 
     next();
 
@@ -290,6 +290,10 @@ app.post('/upgrade/:card', (req, res) => {
         money: player.money,
         cards: getCardInfo(player)
     });
+});
+
+app.use('*', (req, res) => {
+    res.status(404).send('404 Not Found');
 });
 
 app.listen(port, () => {

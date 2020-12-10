@@ -96,11 +96,15 @@ h2 {
 }
 
 .new-game {
-  background-color: black;
+  background-color: maroon;
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
   color: white;
   height: 30px;
+}
+
+.new-game:hover {
+  background-color: #4a0000;
 }
 
 .menu-store-left{
@@ -126,6 +130,9 @@ h2 {
   min-height: 150px;
   border-radius: 5px;
 }
+.deck-two-button:hover{
+  filter: brightness(50%);
+}
 
 .deck-one-button{
   background-image: url(/CardBacksPNGs/Card-Back-lvl1.png);
@@ -137,6 +144,25 @@ h2 {
   min-height: 150px;
   border-radius: 5px;
 }
+
+.deck-one-button:hover{
+  filter: brightness(50%);
+}
+
+.hero-button{
+  background-image: url(/CardBacksPNGs/Card-Back-lvl1.png);
+  background-repeat: no-repeat;
+  background-size: 100px 150px;
+  min-width: 100px;
+  max-width: 100px;
+  max-height: 150px;
+  min-height: 150px;
+  border-radius: 5px;
+}
+.hero-button:hover{
+  filter: brightness(50%);
+}
+
 
 .card-hand{
   display: flex;
@@ -158,6 +184,9 @@ h2 {
   min-height: 150px;
   border-radius: 5px;
 }
+#villain-card-options .card-image img:hover{
+  transform: scale(1.25);
+}
 
 #hero-card-options .card-image img{
   min-width: 100px;
@@ -166,7 +195,9 @@ h2 {
   min-height: 150px;
   border-radius: 5px;
 }
-
+#hero-card-options .card-image img:hover{
+  transform: scale(1.25);
+}
 
 #villain-card-options .villain-card{
   display: flex;
@@ -233,58 +264,43 @@ h2 {
   height: 310px;
 }
 
-.attack-total{
+.rollbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica", sans-serif;
   text-align: center;
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: #f7931e;
   border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.attack-total{
+  background: #f7931e;
 }
 
 .brawn-total{
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
   background: #c9252c;
-  border-radius: 3px;
 }
 
 .tech-total{
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
   background: #009bdb;
-  border-radius: 3px;
 }
 
 .power-total{
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
   background: #8cc63f;
-  border-radius: 3px;
 }
 
 .dice-roll{
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
   background: purple;
-  border-radius: 3px;
 }
 
 .final-total{
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
   background: gray;
-  border-radius: 3px;
 }
 
 .hero-card-table{
@@ -311,13 +327,19 @@ h2 {
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
   font-size: 30px;
-  background-color: #ed1d24;
+  background-color: maroon;
   height: 70px;
   width: 70px;
+  border-radius: 5px;
+}
+
+#start-turn-button:hover {
+  background-color: #4a0000;
 }
 
 .battlefield{
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 }
 .score-counter{
   display: flex;
@@ -332,11 +354,5 @@ h2 {
 }
 
 .scoredata{
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
   background: maroon;
-  border-radius: 3px;
-  color: white;
 }
