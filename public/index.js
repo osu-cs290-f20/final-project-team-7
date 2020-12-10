@@ -134,11 +134,47 @@ function playCardListener(event)    {
  
                 alert(winMessage);
 
-                heroDiceContainer.innerText = responseBody.hero.dice;
+                if (responseBody.hero.dice == "1")  {
+                    heroDiceContainer.innerText = "\u2680"
+                }
+                else if (responseBody.hero.dice == "2")  {
+                    heroDiceContainer.innerText = "\u2681"
+                }
+                else if (responseBody.hero.dice == "3")  {
+                    heroDiceContainer.innerText = "\u2682"
+                }
+                else if (responseBody.hero.dice == "4")  {
+                    heroDiceContainer.innerText = "\u2683"
+                }
+                else if (responseBody.hero.dice == "5")  {
+                    heroDiceContainer.innerText = "\u2684"
+                }
+                else {
+                    heroDiceContainer.innerText = "\u2685"
+                }
+
+                if (responseBody.villain.dice == "1")  {
+                    villainDiceContainer.innerText = "\u2680"
+                }
+                else if (responseBody.villain.dice == "2")  {
+                    villainDiceContainer.innerText = "\u2681"
+                }
+                else if (responseBody.villain.dice == "3")  {
+                    villainDiceContainer.innerText = "\u2682"
+                }
+                else if (responseBody.villain.dice == "4")  {
+                    villainDiceContainer.innerText = "\u2683"
+                }
+                else if (responseBody.villain.dice == "5")  {
+                    villainDiceContainer.innerText = "\u2684"
+                }
+                else  {
+                    villainDiceContainer.innerText = "\u2685"
+                }
+
                 heroAttackContainer.innerText = responseBody.hero.attack;
                 finalTotalContainer[1].innerText = responseBody.hero.total;
 
-                villainDiceContainer.innerText = responseBody.villain.dice;
                 villainAttackContainer.innerText = responseBody.villain.attack;
                 finalTotalContainer[0].innerText = responseBody.villain.total;
 
