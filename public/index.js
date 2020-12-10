@@ -235,6 +235,9 @@ function buyHeroButtonListener(event)  {
             if (selectedHeroSpot.childElementCount != 0)   {
                 selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
             }
+            if (selectedVillainSpot.childElementCount != 0)   {
+                selectedVillainSpot.removeChild(selectedVillainSpot.children[0]);
+            }
             updateCardHand(responseBody.cards);
         }
         else   {
@@ -268,6 +271,9 @@ function upgradeHeroButtonListener(event)   {
                 pointsCounterContainer.innerText = responseBody.money;
                 updateCardHand(responseBody.cards);
                 selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
+                if (selectedVillainSpot.childElementCount != 0)   {
+                    selectedVillainSpot.removeChild(selectedVillainSpot.children[0]);
+                }
             }
             else   {
                 heroCardOptionsContainer.appendChild(selectedHeroSpot.children[0]);
