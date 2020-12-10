@@ -26,6 +26,7 @@ var techStatContainer = document.getElementsByClassName("tech-total");
 
 var levelOneHeroButton = document.getElementById('level-1-hero-button');
 var levelTwoHeroButton = document.getElementById('level-2-hero-button');
+var upgradeHeroButton = document.getElementById('upgrade-hero-button');
 
 for (var i = 0; i < heroCardHand.length; i++)   {
     heroCardHand[i].addEventListener('click', selectHeroListener);
@@ -206,10 +207,10 @@ function playCardListener(event)    {
     }
 }
 
-levelOneHeroButton.addEventListener('click', upgradeHeroButtonListener);
-levelTwoHeroButton.addEventListener('click', upgradeHeroButtonListener);
+levelOneHeroButton.addEventListener('click', buyHeroButtonListener);
+levelTwoHeroButton.addEventListener('click', buyHeroButtonListener);
 
-function upgradeHeroButtonListener(event)  {
+function buyHeroButtonListener(event)  {
     upgradePostRequest = new XMLHttpRequest();
 
     var requestURL;
@@ -238,4 +239,38 @@ function upgradeHeroButtonListener(event)  {
     });
 
     upgradePostRequest.send();
+}
+
+upgradeHeroButton.addEventListener('click', upgradeHeroButtonListener);
+
+function upgradeHeroButtonListener(event)   {
+    if (selectedHeroSpot.childElementCount == 0)    {
+        alert("Please select a hero to be upgraded");
+    }
+    else    {
+        var heroName = selectedHeroSpot.children[0].firstElementChild.dataset.name;
+
+        upgradeHeroRequest =new XMLHttpRequest();
+        var requestURL = '/upgrade/' + heroName;
+
+        upgradeHeroRequest.open('POST', requestURL);
+        upgradeHeroRequest.setRequestHeader('Content-type', 'application/json');
+        upgradeHeroRequest.responseType = 'json'
+
+        upgradeHeroRequest.addEventListener('load', function(event) {
+            if (event.target.status == 200) {
+                var responseBody = upgradeHeroRequest.response;
+
+                pointsCounterContainer.innerText = responseBody.money;
+                updateCardHand(responseBody.cards);
+                selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
+            }
+            else   {
+                heroCardOptionsContainer.appendChild(selectedHeroSpot.children[0]);
+                alert("Cannot upgrade hero")
+        }
+    });
+
+    upgradeHeroRequest.send();  
+    }   
 }
