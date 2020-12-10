@@ -24,6 +24,7 @@ header a {
 
 .content {
   display: flex;
+  justify-content: space-between;
 }
 
 .menu-container-left{
@@ -42,11 +43,14 @@ header a {
   display: inline-block;
   min-width: 100px;
   max-width: 100px;
-  margin: 10px 10px auto 10px;
-  padding: 20px;
-  border-radius: 3px;
-  background-color: #efefef;
+  padding: 5px;
+  background: purple;
   float: right;
+}
+
+#card-table {
+  flex: 1;
+  overflow: auto;
 }
 
 .battle-zone{
@@ -54,10 +58,6 @@ header a {
   flex-direction: column;
   background-color: green;
   align-items: center;
-  /*min-width: 500px;
-  max-width: 1000px;
-  min-height: 500px;
-  max-height: 1000px;*/
   margin: 0;
 }
 
@@ -76,7 +76,6 @@ header a {
 }
 
 .hero-decks{
-  background-color: blue;
   min-width: 100px;
   max-width: 100px;
   max-height: 150px;
@@ -84,6 +83,9 @@ header a {
 }
 
 .deck-two-button{
+  background-image: url(/CardBacksPNGs/Card-Back-lvl2.png);
+  background-repeat: no-repeat;
+  background-size: 100px 150px;
   min-width: 100px;
   max-width: 100px;
   max-height: 150px;
@@ -102,11 +104,6 @@ header a {
   border-radius: 5px;
 }
 
-.card-table{
-  max-width: 90%;
-  min-width: 90%;
-}
-
 .card-hand{
   display: flex;
   flex-direction: row;
@@ -120,7 +117,15 @@ header a {
   flex-wrap: wrap;
 }
 
-.card-image img{
+#villain-card-options .card-image img{
+  min-width: 100px;
+  max-width: 100px;
+  max-height: 150px;
+  min-height: 150px;
+  border-radius: 5px;
+}
+
+#hero-card-options .card-image img{
   min-width: 100px;
   max-width: 100px;
   max-height: 150px;
@@ -129,7 +134,7 @@ header a {
 }
 
 
-.villain-card{
+#villain-card-options .villain-card{
   display: flex;
   align-items: center;
   min-width: 100px;
@@ -141,28 +146,99 @@ header a {
   margin-left: 8px;
 }
 
-.card-purchace-table{
-  min-width: 50px;
-  height: 500px;
-  background-color: purple;
+#hero-card-options .hero-card{
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  max-width: 100px;
+  max-height: 150px;
+  min-height: 150px;
+  margin: 2px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+#villain-card-spot .villain-card{
+  width: 200px;
+  height: 300px;
+}
+
+#hero-card-spot .hero-card{
+  width: 200px;
+  height: 300px;
+}
+
+#villain-card-spot .villain-card .card-image img{
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+#hero-card-spot .hero-card .card-image img{
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
 }
 
 .villain-card-table{
-  min-width: 200px;
-  max-width: 200px;
-  max-height: 300px;
-  min-height: 300px;
+  width: 250px;
+  height: 310px;
   background: black;
+  margin: 5px;
+  display: flex;
+}
+
+#villain-card-spot{
+  width: 200px;
+  height: 300px;
+  background: grey;
   margin: 5px;
 }
 
+.villain-data-boxes{
+  width: 40px;
+  height: 310px;
+}
+
+.attack-total{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: orange;
+}
+
+.dice-roll{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: red;
+}
+
+.final-total{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: blue;
+}
+
 .hero-card-table{
-  min-width: 200px;
-  max-width: 200px;
-  max-height: 300px;
-  min-height: 300px;
+  width: 250px;
+  height: 310px;
   background: white;
   margin: 5px;
+  display: flex;
+}
+
+#hero-card-spot{
+  width: 200px;
+  height: 300px;
+  background: lightgrey;
+  margin: 5px;
+}
+
+.hero-data-boxes{
+  width: 40px;
+  height: 310px;
 }
 
 .battlefield{
