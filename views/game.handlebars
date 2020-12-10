@@ -9,7 +9,7 @@
         <div class = "menu-newgame-left">
         <h2>Menu</h2>
           <div class = "NG-button">
-            <button id="new-game-button" class="action-button">New Game</button>
+            <form action="/new" method="POST"><input class="new-game" type="submit"/></form>
           </div>
         </div>
 
@@ -116,15 +116,15 @@
       <aside class="menu-container-right">
         <div class="score-counter">
 	  <h3>Your Score:</h3>
-	  <!--
-	    put score here
-	  -->
+	  <div id="score-total">
+
+	  </div>
 	</div>
-        <div class="points-counter"
+        <div class="points-counter">
           <h3>Points to spend:</h3>
-	  <!--
-	    put points here
-	  -->
+	  <div id="point-total">
+
+	  </div>
 	</div>
       </aside>
 
