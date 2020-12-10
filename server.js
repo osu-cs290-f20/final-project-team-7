@@ -32,11 +32,15 @@ for (var i = 0; i < files.length; i++) {
 }
 
 /// Performs an in-place Fisher-Yates shuffle. Also returns the array.
-function shuffle(array) {
+/// If bias is true, shuffle is biased so that elements from the front of the array
+/// are more likely to stay closer to the front of the array. This is so that
+/// the player will be more likely to encounter the weaker villains earlier in the game.
+function shuffle(array, biasFactor) {
+    if (!biasFactor) biasFactor = 1;
     for (var i = 0; i < array.length; i++) {
         // Grab a random element from the unshuffled portion
         // of the array and swap it with this index.
-        var targetIndex = i + Math.floor(Math.random() * (array.length - i));
+        var targetIndex = i + Math.floor(Math.pow(Math.random(), biasFactor) * (array.length - i));
         var old = array[i];
         array[i] = array[targetIndex];
         array[targetIndex] = old;
@@ -50,6 +54,12 @@ function newPlayer() {
     var level1Heroes = [...HERO_CARDS.keys()].filter((index) => HERO_CARDS[index].cost == 1);
     var level2Heroes = [...HERO_CARDS.keys()].filter((index) => HERO_CARDS[index].cost == 2);
 
+    var unshuffledVillainDeck = [...VILLAIN_CARDS.keys()];
+    unshuffledVillainDeck.sort((a, b) =>
+        (VILLAIN_CARDS[b].attack - VILLAIN_CARDS[a].attack),
+    );
+    var villainDeck = shuffle(unshuffledVillainDeck, 2.2);
+    //console.log(villainDeck.map((a) => VILLAIN_CARDS[a].attack))
     var player = {
         // The currently active hero cards. Each element 
         // is an object with integer properties 'index' and 'level'.
@@ -67,7 +77,7 @@ function newPlayer() {
         level2Deck: shuffle(level2Heroes),
 
         // An array of indices in VILLAIN_CARDS.
-        villainDeck: shuffle([...VILLAIN_CARDS.keys()])
+        villainDeck: villainDeck
     };
     player.heroes.push({
         index: player.level1Deck.pop(),
