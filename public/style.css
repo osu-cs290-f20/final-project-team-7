@@ -4,7 +4,7 @@ body{
 }
 
 header{
-  background-color: brown;
+  background-color: #ed1d24;
   display: block;
   align-items: center;
   position: relative;
@@ -15,11 +15,12 @@ header a {
 }
 
 .site-title{
-  font-family: "Georgia", serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 80px;
   font-weight: 100;
   margin: 0 0 0 20px;
   padding-top: 30px;
+  color: white;
 }
 
 .content {
