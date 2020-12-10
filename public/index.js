@@ -231,6 +231,10 @@ function buyHeroButtonListener(event)  {
             var responseBody = upgradePostRequest.response;
 
             pointsCounterContainer.innerText = responseBody.money;
+
+            if (heroCardOptionsContainer.childElementCount != 0)   {
+                heroCardOptionsContainer.appendChild(selectedHeroSpot.children[0]);
+            }
             updateCardHand(responseBody.cards);
         }
         else   {
