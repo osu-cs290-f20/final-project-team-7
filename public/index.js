@@ -4,9 +4,12 @@
 
 var heroCardHand = document.getElementsByClassName('hero-card');
 var villainCardHand = document.getElementsByClassName('villain-card');
+
 var selectedVillainSpot = document.getElementById('villain-card-spot');
 var selectedHeroSpot = document.getElementById('hero-card-spot');
+
 var playCardButton = document.getElementById('start-turn-button');
+
 var heroCardOptionsContainer = document.getElementById('hero-card-options');
 var villainCardOptionsContainer = document.getElementById('villain-card-options');
 var heroDiceContainer = document.querySelector(".hero-data-boxes .dice-roll");
@@ -14,10 +17,14 @@ var villainDiceContainer = document.querySelector(".villain-data-boxes .dice-rol
 var heroAttackContainer = document.querySelector(".hero-data-boxes .attack-total");
 var villainAttackContainer = document.querySelector(".villain-data-boxes .attack-total");
 var finalTotalContainer = document.getElementsByClassName("final-total");
-// var scoreCounterContainer = document.querySelector('.score-counter');
-// var pointsCounterContainer = document.querySelector('.points-counter');
+var scoreCounterContainer = document.getElementById("score-total");
+var pointsCounterContainer = document.getElementById('point-total');
 
+scoreCounterContainer.innerText = "0";
+pointsCounterContainer.innerText = "3";
 
+var levelOneHeroButton = document.getElementById('level-1-hero-button');
+var levelTwoHeroButton = document.getElementById('level-2-hero-button');
 
 for (var i = 0; i < heroCardHand.length; i++)   {
     heroCardHand[i].addEventListener('click', selectHeroListener);
@@ -30,7 +37,8 @@ function selectHeroListener(event)  {
         selectedHeroSpot.appendChild(selectedHeroCard);
     }
    else {
-       selectedHeroSpot.children[0] = selectedHeroCard;
+       heroCardOptionsContainer.appendChild(selectedHeroSpot.children[0]);
+       selectedHeroSpot.appendChild(selectedHeroCard);
    }
 }
 
@@ -48,7 +56,8 @@ function selectVillainListener(event)   {
         selectedVillainSpot.appendChild(selectedVillainCard);
     }
    else {
-       selectedVillainSpot.children[0] = selectedVillainCard;
+       villainCardOptionsContainer.appendChild(selectedVillainSpot.children[0]);
+       selectedVillainSpot.appendChild(selectedVillainCard);
    }
 }
 
@@ -130,8 +139,8 @@ function playCardListener(event)    {
                 villainAttackContainer.innerText = responseBody.villain.attack;
                 finalTotalContainer[0].innerText = responseBody.villain.total;
 
-                // pointsCounterContainer.innerText = responseBody.money;
-                // scoreCounterContainer.innerText = responseBody.score;
+                pointsCounterContainer.innerText = responseBody.money;
+                scoreCounterContainer.innerText = responseBody.score;
 
                 selectedVillainSpot.removeChild(selectedVillainSpot.children[0]);
                 selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
@@ -144,7 +153,42 @@ function playCardListener(event)    {
                 alert("Error sending play request");
             }
         });
-
         playPostRequest.send(reqBody);
     }
+}
+
+levelOneHeroButton.addEventListener('click', upgradeHeroButtonListener);
+levelTwoHeroButton.addEventListener('click', upgradeHeroButtonListener);
+
+function upgradeHeroButtonListener(event)  {
+    upgradePostRequest = new XMLHttpRequest();
+
+    var requestURL;
+
+    if (event.currentTarget == levelOneHeroButton)  {
+        requestURL = '/upgrade/1';
+        console.log('requesting level 1')
+    }
+    else if (event.currentTarget == levelTwoHeroButton) {
+        requestURL = '/upgrade/2';
+        console.log('requesting level 2')
+    }
+
+    upgradePostRequest.open('POST', requestURL);
+    upgradePostRequest.setRequestHeader('Content-type', 'application/json');
+    upgradePostRequest.responseType = 'json'
+
+    upgradePostRequest.addEventListener('load', function(event) {
+        if (event.target.status == 200) {
+            var responseBody = upgradePostRequest.response;
+
+            pointsCounterContainer.innerText = responseBody.money;
+            updateCardHand(responseBody.cards);
+        }
+        else   {
+            alert("Cannot update hand")
+        }
+    });
+
+    upgradePostRequest.send();
 }
