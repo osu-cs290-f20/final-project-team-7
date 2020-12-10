@@ -93,7 +93,7 @@ function getPlayerMiddleware(req, res, next) {
         req.session = crypto.randomBytes(SESSION_LEN).toString('hex');
         req.player = newPlayer();
     }
-    res.cookie(SESSION_COOKIE, req.session);
+    res.cookie(SESSION_COOKIE, req.session, {sameSite: 'Lax'});
 
     next();
 
