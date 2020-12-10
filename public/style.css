@@ -8,18 +8,26 @@ header{
   display: block;
   align-items: center;
   position: relative;
+  display: flex;
+  box-shadow: 5px 5px 5px black;
 }
 
 header a {
   color: #fff;
 }
 
+.header-image-logo img{
+  height: 90px;
+  margin: 0 0 0 20px;
+  padding-top: 20px;
+}
+
 .site-title{
   font-family: "Helvetica", sans-serif;
   font-size: 80px;
   font-weight: 100;
-  margin: 0 0 0 20px;
   padding-top: 30px;
+  margin: 0 0 0 0;
   color: white;
 }
 
@@ -28,25 +36,40 @@ header a {
   justify-content: space-between;
 }
 
+h3 {
+  font-family: "Helvetica", sans-serif;
+  color: white;
+}
+
+h2 {
+  font-family: "Helvetica", sans-serif;
+  color: white;
+}
+
 .menu-container-left{
   text-align: center;
   display: inline-flex;
   flex-direction: column;
   position: relative;
   align-items: center;
-  background-color: #a17820;
+  background-color: #ed1d24;
   float: left;
   max-width: 100px;
   padding: 5px;
+  box-shadow: 5px 5px 5px black;
+  text-color:
 }
 
 .menu-container-right{
+  text-align:center;
   display: inline-block;
+  position: relative;
   min-width: 100px;
   max-width: 100px;
   padding: 5px;
-  background: purple;
+  background: #ed1d24;
   float: right;
+  box-shadow: 5px 5px 5px black;
 }
 
 #card-table {
@@ -57,7 +80,8 @@ header a {
 .battle-zone{
   display: flex;
   flex-direction: column;
-  background-color: green;
+  background-image: url(/DecorativeImages/metal-background.png);
+  background-repeat: no-repeat;
   align-items: center;
   margin: 0;
 }
@@ -68,6 +92,14 @@ header a {
   padding: 10px;
   display: flex;
   align-items: center;
+}
+
+.new-game {
+  background-color: black;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  color: white;
+  height: 30px; 
 }
 
 .menu-store-left{
@@ -184,7 +216,7 @@ header a {
 .villain-card-table{
   width: 250px;
   height: 310px;
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
   margin: 5px;
   display: flex;
 }
@@ -192,7 +224,6 @@ header a {
 #villain-card-spot{
   width: 200px;
   height: 300px;
-  background: grey;
   margin: 5px;
 }
 
@@ -225,7 +256,7 @@ header a {
 .hero-card-table{
   width: 250px;
   height: 310px;
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
   margin: 5px;
   display: flex;
 }
@@ -233,13 +264,22 @@ header a {
 #hero-card-spot{
   width: 200px;
   height: 300px;
-  background: lightgrey;
   margin: 5px;
 }
 
 .hero-data-boxes{
   width: 40px;
   height: 310px;
+}
+
+#start-turn-button {
+  color: white;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #ed1d24;
+  height: 70px;
+  width: 70px;
 }
 
 .battlefield{
