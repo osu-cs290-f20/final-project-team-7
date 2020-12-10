@@ -23,7 +23,6 @@ fs.mkdirSync(PLAYERS_DIR, {recursive: true});
 var files = fs.readdirSync(PLAYERS_DIR);
 for (var i = 0; i < files.length; i++) {
     if (files[i].endsWith('.json')) {
-        var path = PLAYERS_DIR + '/' + files[i];
         console.log("Loading", files[i]);
 
         var json = fs.readFileSync(PLAYERS_DIR + '/' + files[i]);
@@ -109,7 +108,7 @@ function getPlayerMiddleware(req, res, next) {
 /// Looks up cards for a given player (converting from the indexes
 ///     in the player object to the names and stats).
 function getCardInfo(player) {
-    console.log(player);
+    //console.log(player);
     return {
             heroes: player.heroes.map((card) => HERO_CARDS[card.index].levels[card.level]),
             villains: player.villains.map((card) => VILLAIN_CARDS[card.index])
@@ -144,6 +143,12 @@ app.get('/', (req, res) => {
     });
 });
 
+app.post('/new', (req, res) => {
+    // Reset the session and redirect.
+    req.player = newPlayer();
+    res.redirect(303, '/');
+});
+
 app.post('/play', (req, res) => {
     var player = req.player;
 
@@ -170,9 +175,26 @@ app.post('/play', (req, res) => {
             if (heroScore == villScore) continue; // Tie; roll again.
 
             var win = (heroScore > villScore);
+            var endgame = null;
             if (win) {
                 player.money += villain.cost;
                 player.score += villain.cost;
+                // The villain card is lost.
+                player.villains.splice(villainIndex, 1);
+                if (player.villainDeck.length != 0) {
+                    player.villains.push({index: player.villainDeck.pop()});
+                } else {
+                    // The deck is out of villain cards.
+                    if (player.villains.length === 0) {
+                        endgame = "win";
+                    }
+                }
+            } else {
+                // The hero card is lost.
+                player.heroes.splice(heroIndex, 1);
+                if (player.heroes.length === 0 && player.money === 0) {
+                    endgame = "lose";
+                }
             }
             res.status(200).send({
                 win: win,
@@ -190,8 +212,14 @@ app.post('/play', (req, res) => {
                     boost: villBoost,
                     total: villScore
                 },
-                cards: getCardInfo(player)
+                cards: getCardInfo(player),
+                endgame: endgame
             });
+
+            if (endgame) {
+                // Reset the player's session, so that a new game will begin when they reload the page.
+                req.player = newPlayer();
+            }
             break;
         }
     } else {
