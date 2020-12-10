@@ -5,6 +5,7 @@ var heroCardHand = document.getElementsByClassName('hero-card');
 var villainCardHand = document.getElementsByClassName('villain-card');
 var selectedVillainSpot = document.getElementById('villain-card-spot');
 var selectedHeroSpot = document.getElementById('hero-card-spot');
+var playCardButton = document.getElementById('start-turn-button');
 
 console.log(villainCardHand);
 for (var i = 0; i < heroCardHand.length; i++)   {
@@ -42,4 +43,23 @@ function selectVillainListener(event)   {
     //    console.log(selectedVillainSpot.children[0])
        selectedVillainSpot.children[0] = selectedVillainCard;
    }
+}
+
+playCardButton.addEventListener('click', playCardListener);
+
+function playCardListener(event)    {
+    if (selectedVillainSpot.childElementCount == 0 || selectedHeroSpot.childElementCount == 0)  {
+        alert("Please select a Hero and a Villain card to play");
+    }
+    else    {
+        var heroName = selectedHeroSpot.children[0].firstElementChild.dataset.name;
+        var villainName = selectedVillainSpot.children[0].firstElementChild.dataset.name;
+
+        var playPostRequest = new XMLHttpRequest();
+        playPostRequest.open('POST', '/play');
+
+        // console.log("Going to play these cards");
+        // console.log(villainName);
+        // console.log(heroName);
+    }
 }
