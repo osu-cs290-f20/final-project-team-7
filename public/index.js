@@ -121,12 +121,18 @@ function playCardListener(event)    {
                 var responseBody = playPostRequest.response;
                 var winMessage;
                 if (responseBody.win)   {
-                    winMessage = "You won!";
+                    winMessage = "won";
                 }
                 else    {
-                    winMessage = "You lost!";
+                    winMessage = "lost";
                 }
-
+                if (responseBody.endgame) {
+                    winMessage = "Game over; you " + winMessage + "! Press OK to play again.";
+                } else {
+                    winMessage = "You " + winMessage + "!";
+                }
+ 
+                alert(winMessage);
 
                 heroDiceContainer.innerText = responseBody.hero.dice;
                 heroAttackContainer.innerText = responseBody.hero.attack;
@@ -143,8 +149,6 @@ function playCardListener(event)    {
                 selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
 
                 updateCardHand(responseBody.cards);
- 
-                alert(winMessage);
             }
             else    {
                 alert("Error sending play request");

@@ -175,7 +175,7 @@ app.post('/play', (req, res) => {
             if (heroScore == villScore) continue; // Tie; roll again.
 
             var win = (heroScore > villScore);
-            var endgame = null;
+            var endgame = false;
             if (win) {
                 player.money += villain.cost;
                 player.score += villain.cost;
@@ -186,16 +186,23 @@ app.post('/play', (req, res) => {
                 } else {
                     // The deck is out of villain cards.
                     if (player.villains.length === 0) {
-                        endgame = "win";
+                        endgame = true;
                     }
                 }
             } else {
                 // The hero card is lost.
                 player.heroes.splice(heroIndex, 1);
                 if (player.heroes.length === 0 && player.money === 0) {
-                    endgame = "lose";
+                    endgame = true;
                 }
             }
+
+            if (endgame) {
+                // Reset the player's session to restart the game.
+                player = newPlayer();
+                req.player = player;
+            }
+
             res.status(200).send({
                 win: win,
                 money: player.money,
@@ -215,11 +222,6 @@ app.post('/play', (req, res) => {
                 cards: getCardInfo(player),
                 endgame: endgame
             });
-
-            if (endgame) {
-                // Reset the player's session, so that a new game will begin when they reload the page.
-                req.player = newPlayer();
-            }
             break;
         }
     } else {
