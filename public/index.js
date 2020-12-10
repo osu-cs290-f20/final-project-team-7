@@ -21,7 +21,7 @@ var scoreCounterContainer = document.getElementById("score-total");
 var pointsCounterContainer = document.getElementById('point-total');
 
 scoreCounterContainer.innerText = "0";
-pointsCounterContainer.innerText = "3";
+pointsCounterContainer.innerText = "0";
 
 var levelOneHeroButton = document.getElementById('level-1-hero-button');
 var levelTwoHeroButton = document.getElementById('level-2-hero-button');
@@ -167,11 +167,9 @@ function upgradeHeroButtonListener(event)  {
 
     if (event.currentTarget == levelOneHeroButton)  {
         requestURL = '/upgrade/1';
-        console.log('requesting level 1')
     }
     else if (event.currentTarget == levelTwoHeroButton) {
         requestURL = '/upgrade/2';
-        console.log('requesting level 2')
     }
 
     upgradePostRequest.open('POST', requestURL);
