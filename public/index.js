@@ -1,5 +1,5 @@
-// var heroCard = Handlebars.templates.heroCard;
-// var villainCard = Handlebars.templates.villainCard;
+var heroCard = Handlebars.templates.heroCard;
+var villainCard = Handlebars.templates.villainCard;
 
 var heroCardHand = document.getElementsByClassName('hero-card');
 var villainCardHand = document.getElementsByClassName('villain-card');
@@ -66,23 +66,47 @@ function playCardListener(event)    {
         playPostRequest.setRequestHeader('Content-type', 'application/json');
         playPostRequest.responseType = 'json'
 
-        // playPostRequest.onreadystatechange = function() {
-        //     if (playPostRequest.status == 200)  {
-        //         var responseBody = playPostRequest.response;
-        //         console.log(responseBody.win);
-        //     }
-        // }
-
         playPostRequest.addEventListener('load', function(event)    {
+            if (event.target.status == 200) {
+                var responseBody = playPostRequest.response;
+                var winMessage;
+                if (responseBody.win)   {
+                    winMessage = "You won!";
+                }
+                else    {
+                    winMessage = "You lost!";
+                }
 
-            var responseBody = playPostRequest.response;
-            console.log(responseBody.win);
+                var heroDiceContainer = document.querySelector(".hero-data-boxes .dice-roll");
+                var villainDiceContainer = document.querySelector(".villain-data-boxes .dice-roll");
+                var heroAttackContainer = document.querySelector(".hero-data-boxes .attack-total");
+                var villainAttackContainer = document.querySelector(".villain-data-boxes .attack-total");
+                var finalTotalContainer = document.getElementsByClassName("final-total");
+
+                var heroDice = document.createTextNode(responseBody.hero.dice);
+                var heroAttack = document.createTextNode(responseBody.hero.attack);           
+                var heroTotal = document.createTextNode(responseBody.hero.total);
+
+                var villainDice = document.createTextNode(responseBody.villain.dice);
+                var villainAttack = document.createTextNode(responseBody.villain.attack);
+                var villainTotal = document.createTextNode(responseBody.villain.total);
+    
+
+                heroDiceContainer.appendChild(heroDice);
+                heroAttackContainer.appendChild(heroAttack);
+                finalTotalContainer[1].appendChild(heroTotal);
+
+                villainDiceContainer.appendChild(villainDice);
+                villainAttackContainer.appendChild(villainAttack);
+                finalTotalContainer[0].appendChild(villainTotal);
+
+                alert(winMessage);
+            }
+            else    {
+                alert("Error sending play request");
+            }
         });
 
         playPostRequest.send(reqBody);
-
-        // console.log("Going to play these cards");
-        // console.log(villainName);
-        // console.log(heroName);
     }
 }
