@@ -150,14 +150,11 @@ h2 {
 }
 
 .hero-button{
-  background-image: url(/CardBacksPNGs/Card-Back-lvl1.png);
-  background-repeat: no-repeat;
-  background-size: 100px 150px;
-  min-width: 100px;
-  max-width: 100px;
-  max-height: 150px;
-  min-height: 150px;
-  border-radius: 5px;
+  background-color: maroon;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  color: white;
+  height: 40px;
 }
 .hero-button:hover{
   filter: brightness(50%);
@@ -296,7 +293,11 @@ h2 {
 }
 
 .dice-roll{
-  background: purple;
+  text-align: center;
+  color: black;
+  background: white;
+  font-size: 40px;
+  line-height: 40px;
 }
 
 .final-total{
