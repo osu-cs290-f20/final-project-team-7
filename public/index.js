@@ -1,5 +1,5 @@
 
-var heroCardTemplate = Handlebars.templates.heroCard;
+// Handlebars.templates.heroCard;
 // var villainCardTemplate = Handlebars.templates.villainCard;
 
 var heroCardHand = document.getElementsByClassName('hero-card');
@@ -7,6 +7,21 @@ var villainCardHand = document.getElementsByClassName('villain-card');
 var selectedVillainSpot = document.getElementById('villain-card-spot');
 var selectedHeroSpot = document.getElementById('hero-card-spot');
 var playCardButton = document.getElementById('start-turn-button');
+var heroCardOptionsContainer = document.getElementById('hero-card-options');
+var villainCardOptionsContainer = document.getElementById('villain-card-options');
+var heroDiceContainer = document.querySelector(".hero-data-boxes .dice-roll");
+var villainDiceContainer = document.querySelector(".villain-data-boxes .dice-roll");
+var heroAttackContainer = document.querySelector(".hero-data-boxes .attack-total");
+var villainAttackContainer = document.querySelector(".villain-data-boxes .attack-total");
+var finalTotalContainer = document.getElementsByClassName("final-total");
+
+// heroDiceContainer.appendChild(" ");
+// heroAttackContainer.appendChild(" ");
+// finalTotalContainer[1].appendChild(" ");
+
+// villainDiceContainer.appendChild(" ");
+// villainAttackContainer.appendChild(" ");
+// finalTotalContainer[0].appendChild(" ");
 
 
 
@@ -77,28 +92,48 @@ function playCardListener(event)    {
                     winMessage = "You lost!";
                 }
 
-                var heroDiceContainer = document.querySelector(".hero-data-boxes .dice-roll");
-                var villainDiceContainer = document.querySelector(".villain-data-boxes .dice-roll");
-                var heroAttackContainer = document.querySelector(".hero-data-boxes .attack-total");
-                var villainAttackContainer = document.querySelector(".villain-data-boxes .attack-total");
-                var finalTotalContainer = document.getElementsByClassName("final-total");
 
-                var heroDice = document.createTextNode(responseBody.hero.dice);
-                var heroAttack = document.createTextNode(responseBody.hero.attack);           
-                var heroTotal = document.createTextNode(responseBody.hero.total);
+                heroDiceContainer.innerText = responseBody.hero.dice;
+                heroAttackContainer.innerText = responseBody.hero.attack;
+                finalTotalContainer[1].innerText = responseBody.hero.total;
 
-                var villainDice = document.createTextNode(responseBody.villain.dice);
-                var villainAttack = document.createTextNode(responseBody.villain.attack);
-                var villainTotal = document.createTextNode(responseBody.villain.total);
-    
+                villainDiceContainer.innerText = responseBody.villain.dice;
+                villainAttackContainer.innerText = responseBody.villain.attack;
+                finalTotalContainer[0].innerText = responseBody.villain.total;
 
-                heroDiceContainer.appendChild(heroDice);
-                heroAttackContainer.appendChild(heroAttack);
-                finalTotalContainer[1].appendChild(heroTotal);
 
-                villainDiceContainer.appendChild(villainDice);
-                villainAttackContainer.appendChild(villainAttack);
-                finalTotalContainer[0].appendChild(villainTotal);
+                while (heroCardOptionsContainer.firstChild) {
+                    heroCardOptionsContainer.removeChild(heroCardOptionsContainer.firstChild);
+                }
+                while (villainCardOptionsContainer.firstChild)  {
+                    villainCardOptionsContainer.removeChild(villainCardOptionsContainer.firstChild);
+                }
+
+                var newHeroCards = responseBody.cards.heroes;
+
+                for (var i = 0; i < newHeroCards.length; i++)  {
+                    heroCardOptionsContainer.insertAdjacentHTML('beforeend', Handlebars.templates.heroCard(newHeroCards[i]));
+                }
+
+                var newVillainCards = responseBody.cards.villains;
+
+                for (var i = 0; i < newVillainCards.length; i++)    {
+                    villainCardOptionsContainer.insertAdjacentHTML('beforeend', Handlebars.templates.villainCard(newVillainCards[i]));
+                }
+
+                selectedVillainSpot.removeChild(selectedVillainSpot.children[0]);
+                selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
+
+                heroCardHand = document.getElementsByClassName('hero-card');
+                villainCardHand = document.getElementsByClassName('villain-card');  
+                
+                for (var i = 0; i < heroCardHand.length; i++)   {
+                    heroCardHand[i].addEventListener('click', selectHeroListener);
+                }
+
+                for (var i = 0; i < villainCardHand.length; i++)    {
+                    villainCardHand[i].addEventListener('click', selectVillainListener);
+                }
 
                 alert(winMessage);
             }
