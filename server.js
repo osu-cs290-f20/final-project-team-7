@@ -292,6 +292,10 @@ app.post('/upgrade/:card', (req, res) => {
     });
 });
 
+app.use('*', (req, res) => {
+    res.status(404).send('404 Not Found');
+});
+
 app.listen(port, () => {
     console.log(`Server listening http://localhost:${port}`);
 });
