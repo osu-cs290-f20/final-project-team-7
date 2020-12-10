@@ -357,3 +357,9 @@ h2 {
 .scoredata{
   background: maroon;
 }
+
+.error-container {
+  background-color: black;
+  font-family: "Helvetica", sans-serif;
+  text-align: center;
+}

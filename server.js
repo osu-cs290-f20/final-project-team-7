@@ -61,7 +61,7 @@ function newPlayer() {
     var villainDeck = shuffle(unshuffledVillainDeck, 2.2);
     //console.log(villainDeck.map((a) => VILLAIN_CARDS[a].attack))
     var player = {
-        // The currently active hero cards. Each element 
+        // The currently active hero cards. Each element
         // is an object with integer properties 'index' and 'level'.
         heroes: [],
 
@@ -242,7 +242,7 @@ app.post('/play', (req, res) => {
 app.post('/upgrade/:card', (req, res) => {
     var player = req.player;
     var card = req.params.card;
-    
+
     if (card == "1") {
         if (player.level1Deck.length == 0) {
             res.status(403).send('Level 1 deck empty');
@@ -303,7 +303,7 @@ app.post('/upgrade/:card', (req, res) => {
 });
 
 app.use('*', (req, res) => {
-    res.status(404).send('404 Not Found');
+    res.status(404).render('404');
 });
 
 app.listen(port, () => {
