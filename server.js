@@ -69,7 +69,7 @@ function newPlayer() {
         // is an object with one integer property, 'index'.
         villains: [],
 
-        money: 0,
+        money: 2,
         score: 0,
 
         // An array of indices in HERO_CARDS.
