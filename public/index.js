@@ -20,6 +20,10 @@ var finalTotalContainer = document.getElementsByClassName("final-total");
 var scoreCounterContainer = document.getElementById("score-total");
 var pointsCounterContainer = document.getElementById('point-total');
 
+var brawnStatContainer = document.getElementsByClassName("brawn-total");
+var powerStatContainer = document.getElementsByClassName("power-total");
+var techStatContainer = document.getElementsByClassName("tech-total");
+
 var levelOneHeroButton = document.getElementById('level-1-hero-button');
 var levelTwoHeroButton = document.getElementById('level-2-hero-button');
 
@@ -29,6 +33,11 @@ for (var i = 0; i < heroCardHand.length; i++)   {
 
 function selectHeroListener(event)  {
     var selectedHeroCard = event.currentTarget;
+
+    brawnStatContainer[1].innerText = selectedHeroCard.firstElementChild.dataset.brawn;
+    powerStatContainer[1].innerText = selectedHeroCard.firstElementChild.dataset.power;
+    techStatContainer[1].innerText = selectedHeroCard.firstElementChild.dataset.tech;
+
 
     if (selectedHeroSpot.childElementCount == 0) {
         selectedHeroSpot.appendChild(selectedHeroCard);
@@ -47,7 +56,10 @@ for (var i = 0; i < villainCardHand.length; i++)    {
 
 function selectVillainListener(event)   {    
     var selectedVillainCard = event.currentTarget;
-    selectedVillainSpot.firstChild = event.currentTarget;
+
+    brawnStatContainer[0].innerText = selectedVillainCard.firstElementChild.dataset.brawn;
+    powerStatContainer[0].innerText = selectedVillainCard.firstElementChild.dataset.power;
+    techStatContainer[0].innerText = selectedVillainCard.firstElementChild.dataset.tech;
 
     if (selectedVillainSpot.childElementCount == 0) {
         selectedVillainSpot.appendChild(selectedVillainCard);
