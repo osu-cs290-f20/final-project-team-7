@@ -58,6 +58,29 @@ function playCardListener(event)    {
         var playPostRequest = new XMLHttpRequest();
         playPostRequest.open('POST', '/play');
 
+        var reqBody = JSON.stringify({
+            hero: heroName, 
+            villain: villainName
+        })
+
+        playPostRequest.setRequestHeader('Content-type', 'application/json');
+        playPostRequest.responseType = 'json'
+
+        // playPostRequest.onreadystatechange = function() {
+        //     if (playPostRequest.status == 200)  {
+        //         var responseBody = playPostRequest.response;
+        //         console.log(responseBody.win);
+        //     }
+        // }
+
+        playPostRequest.addEventListener('load', function(event)    {
+
+            var responseBody = playPostRequest.response;
+            console.log(responseBody.win);
+        });
+
+        playPostRequest.send(reqBody);
+
         // console.log("Going to play these cards");
         // console.log(villainName);
         // console.log(heroName);
