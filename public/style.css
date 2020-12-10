@@ -238,7 +238,16 @@ h2 {
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: orange;
+  background: #f7931e;
+  border-radius: 3px;
+}
+
+.brawn-total{
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: #c9252c;
   border-radius: 3px;
 }
 
@@ -247,7 +256,7 @@ h2 {
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: green;
+  background: #009bdb;
   border-radius: 3px;
 }
 
@@ -256,7 +265,7 @@ h2 {
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: blue;
+  background: #8cc63f;
   border-radius: 3px;
 }
 
@@ -274,7 +283,7 @@ h2 {
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: white;
+  background: gray;
   border-radius: 3px;
 }
 
