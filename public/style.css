@@ -75,12 +75,13 @@ h2 {
 #card-table {
   flex: 1;
   overflow: auto;
+  background-image: url(/DecorativeImages/metal-background.png);
 }
 
 .battle-zone{
+
   display: flex;
   flex-direction: column;
-  background-image: url(/DecorativeImages/metal-background.png);
   background-repeat: no-repeat;
   align-items: center;
   margin: 0;
@@ -99,7 +100,7 @@ h2 {
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
   color: white;
-  height: 30px; 
+  height: 30px;
 }
 
 .menu-store-left{
@@ -233,24 +234,57 @@ h2 {
 }
 
 .attack-total{
+  text-align: center;
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: orange;
+  background: #f7931e;
+  border-radius: 3px;
+}
+
+.brawn-total{
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: #c9252c;
+  border-radius: 3px;
+}
+
+.tech-total{
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: #009bdb;
+  border-radius: 3px;
+}
+
+.power-total{
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: #8cc63f;
+  border-radius: 3px;
 }
 
 .dice-roll{
+  text-align: center;
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: red;
+  background: purple;
+  border-radius: 3px;
 }
 
 .final-total{
+  text-align: center;
   width: 30px;
   height: 30px;
   margin: 5px;
-  background: blue;
+  background: gray;
+  border-radius: 3px;
 }
 
 .hero-card-table{
@@ -284,4 +318,25 @@ h2 {
 
 .battlefield{
   display: inline-flex;
+}
+.score-counter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points-counter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scoredata{
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: maroon;
+  border-radius: 3px;
+  color: white;
 }
