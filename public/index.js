@@ -14,14 +14,8 @@ var villainDiceContainer = document.querySelector(".villain-data-boxes .dice-rol
 var heroAttackContainer = document.querySelector(".hero-data-boxes .attack-total");
 var villainAttackContainer = document.querySelector(".villain-data-boxes .attack-total");
 var finalTotalContainer = document.getElementsByClassName("final-total");
-
-// heroDiceContainer.appendChild(" ");
-// heroAttackContainer.appendChild(" ");
-// finalTotalContainer[1].appendChild(" ");
-
-// villainDiceContainer.appendChild(" ");
-// villainAttackContainer.appendChild(" ");
-// finalTotalContainer[0].appendChild(" ");
+// var scoreCounterContainer = document.querySelector('.score-counter');
+// var pointsCounterContainer = document.querySelector('.points-counter');
 
 
 
@@ -56,6 +50,41 @@ function selectVillainListener(event)   {
    else {
        selectedVillainSpot.children[0] = selectedVillainCard;
    }
+}
+
+
+function updateCardHand (cardResponse)  {
+    while (heroCardOptionsContainer.firstChild) {
+        heroCardOptionsContainer.removeChild(heroCardOptionsContainer.firstChild);
+    }
+    while (villainCardOptionsContainer.firstChild)  {
+        villainCardOptionsContainer.removeChild(villainCardOptionsContainer.firstChild);
+    }
+
+    var newHeroCards = cardResponse.heroes;
+
+    for (var i = 0; i < newHeroCards.length; i++)  {
+        heroCardOptionsContainer.insertAdjacentHTML('beforeend', Handlebars.templates.heroCard(newHeroCards[i]));
+    }
+
+    var newVillainCards = cardResponse.villains;
+
+    for (var i = 0; i < newVillainCards.length; i++)    {
+        villainCardOptionsContainer.insertAdjacentHTML('beforeend', Handlebars.templates.villainCard(newVillainCards[i]));
+    }
+
+
+
+    heroCardHand = document.getElementsByClassName('hero-card');
+    villainCardHand = document.getElementsByClassName('villain-card');  
+    
+    for (var i = 0; i < heroCardHand.length; i++)   {
+        heroCardHand[i].addEventListener('click', selectHeroListener);
+    }
+
+    for (var i = 0; i < villainCardHand.length; i++)    {
+        villainCardHand[i].addEventListener('click', selectVillainListener);
+    }
 }
 
 
@@ -101,40 +130,14 @@ function playCardListener(event)    {
                 villainAttackContainer.innerText = responseBody.villain.attack;
                 finalTotalContainer[0].innerText = responseBody.villain.total;
 
-
-                while (heroCardOptionsContainer.firstChild) {
-                    heroCardOptionsContainer.removeChild(heroCardOptionsContainer.firstChild);
-                }
-                while (villainCardOptionsContainer.firstChild)  {
-                    villainCardOptionsContainer.removeChild(villainCardOptionsContainer.firstChild);
-                }
-
-                var newHeroCards = responseBody.cards.heroes;
-
-                for (var i = 0; i < newHeroCards.length; i++)  {
-                    heroCardOptionsContainer.insertAdjacentHTML('beforeend', Handlebars.templates.heroCard(newHeroCards[i]));
-                }
-
-                var newVillainCards = responseBody.cards.villains;
-
-                for (var i = 0; i < newVillainCards.length; i++)    {
-                    villainCardOptionsContainer.insertAdjacentHTML('beforeend', Handlebars.templates.villainCard(newVillainCards[i]));
-                }
+                // pointsCounterContainer.innerText = responseBody.money;
+                // scoreCounterContainer.innerText = responseBody.score;
 
                 selectedVillainSpot.removeChild(selectedVillainSpot.children[0]);
                 selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
 
-                heroCardHand = document.getElementsByClassName('hero-card');
-                villainCardHand = document.getElementsByClassName('villain-card');  
-                
-                for (var i = 0; i < heroCardHand.length; i++)   {
-                    heroCardHand[i].addEventListener('click', selectHeroListener);
-                }
-
-                for (var i = 0; i < villainCardHand.length; i++)    {
-                    villainCardHand[i].addEventListener('click', selectVillainListener);
-                }
-
+                updateCardHand(responseBody.cards);
+ 
                 alert(winMessage);
             }
             else    {
