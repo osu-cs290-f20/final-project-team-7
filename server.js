@@ -137,7 +137,11 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.status(200).render('game', getCardInfo(req.player));
+    res.status(200).render('game', {
+        score: req.player.score,
+        money: req.player.money,
+        ...getCardInfo(req.player)
+    });
 });
 
 app.post('/play', (req, res) => {
