@@ -20,9 +20,6 @@ var finalTotalContainer = document.getElementsByClassName("final-total");
 var scoreCounterContainer = document.getElementById("score-total");
 var pointsCounterContainer = document.getElementById('point-total');
 
-scoreCounterContainer.innerText = "0";
-pointsCounterContainer.innerText = "0";
-
 var levelOneHeroButton = document.getElementById('level-1-hero-button');
 var levelTwoHeroButton = document.getElementById('level-2-hero-button');
 
