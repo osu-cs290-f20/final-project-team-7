@@ -9,7 +9,7 @@
         <div class = "menu-newgame-left">
         <h2>Menu</h2>
           <div class = "NG-button">
-            <form action="/new" method="POST"><input class="new-game" type="submit"/></form>
+            <form action="/new" method="POST"><input class="new-game" type="submit" value="New Game"/></form>
           </div>
         </div>
 
@@ -57,36 +57,36 @@
           -->
         </div>
         <div class="villain-data-boxes">
-          <div class="attack-total">
+          <div class="attack-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="brawn-total">
+          <div class="brawn-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="power-total">
+          <div class="power-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="tech-total">
+          <div class="tech-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="dice-roll">
+          <div class="dice-roll rollbox">
             <!--
               Villain dice roll goes here
             -->
           </div>
-	  <div class="final-total">
-	    <!--
-	      Final calculated total
-	    -->
-	  </div>
+	         <div class="final-total rollbox">
+	            <!--
+	             Final calculated total
+	            -->
+	           </div>
         </div>
       </div>
 
@@ -97,36 +97,36 @@
           This is where the selected hero card and stats go
         -->
         <div class="hero-data-boxes">
-          <div class="attack-total">
+          <div class="attack-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="brawn-total">
+          <div class="brawn-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="power-total">
+          <div class="power-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="tech-total">
+          <div class="tech-total rollbox">
             <!--
               Calculated total attack damage goes here
             -->
           </div>
-          <div class="dice-roll">
+          <div class="dice-roll rollbox">
             <!--
               Hero dice roll goes here
             -->
           </div>
-	  <div class="final-total">
-	    <!--
-	      Final calculated total
-	    -->
-	  </div>
+	         <div class="final-total rollbox">
+	            <!--
+	             Final calculated total
+	            -->
+	           </div>
         </div>
         <div id="hero-card-spot">
           <!--
@@ -148,14 +148,14 @@
       <aside class="menu-container-right">
         	  <h3>Your Score:</h3>
         <div class="score-counter">
-	  <div id="score-total" class="scoredata">
+	  <div id="score-total" class="scoredata rollbox">
 
       {{score}}
 	  </div>
 	</div>
     <h3>Points to spend:</h3>
         <div class="points-counter">
-	  <div id="point-total" class="scoredata">
+	  <div id="point-total" class="scoredata rollbox">
 
       {{money}}
 	  </div>
