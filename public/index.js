@@ -231,6 +231,10 @@ function buyHeroButtonListener(event)  {
             var responseBody = upgradePostRequest.response;
 
             pointsCounterContainer.innerText = responseBody.money;
+
+            if (selectedHeroSpot.childElementCount != 0)   {
+                selectedHeroSpot.removeChild(selectedHeroSpot.children[0]);
+            }
             updateCardHand(responseBody.cards);
         }
         else   {
@@ -250,7 +254,7 @@ function upgradeHeroButtonListener(event)   {
     else    {
         var heroName = selectedHeroSpot.children[0].firstElementChild.dataset.name;
 
-        upgradeHeroRequest =new XMLHttpRequest();
+        upgradeHeroRequest = new XMLHttpRequest();
         var requestURL = '/upgrade/' + heroName;
 
         upgradeHeroRequest.open('POST', requestURL);
