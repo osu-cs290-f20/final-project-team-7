@@ -5,7 +5,7 @@
         "attack": 6,
         "brawn": 3,
         "image": "/vCardPNGS/VCard_A.png"
-	    
+
     },
     {
         "cost": 2,
@@ -13,7 +13,7 @@
         "attack": 4,
         "power": 2,
         "image": "/vCardPNGS/VCard_AK.png"
-	    
+
     },
     {
         "cost": 1,
@@ -60,7 +60,7 @@
         "tech": 3,
         "image": "/vCardPNGS/VCard_EK.png"
     },
-    {    
+    {
         "cost": 2,
         "name":"Ebony Maw",
         "attack": 6,
@@ -72,7 +72,7 @@
         "name": "Ghost",
         "attack": 2,
         "Power": 3,
-        "image": "/vCardPNGS/VCard_G.png" 
+        "image": "/vCardPNGS/VCard_G.png"
     },
     {
         "cost": 3,
@@ -92,8 +92,8 @@
         "cost": 2,
         "name": "Kaecilius",
         "attack": 5,
-        "tech": 3,
-        "image": "/vCardPNGS/VCard_K.png" 
+        "power": 3,
+        "image": "/vCardPNGS/VCard_K.png"
     },
     {
         "cost": 2,
@@ -125,7 +125,7 @@
         "attack": 2,
         "brawn": 1,
         "image": "/vCardPNGS/VCard_MA.png"
-	    
+
     },
     {
         "cost": 1,
@@ -236,7 +236,7 @@
         "tech": 2,
         "image": "/vCardPNGS/VCard_V.png"
     },
-    {    
+    {
         "cost": 1,
         "name": "Whiplash",
         "attack": 3,
